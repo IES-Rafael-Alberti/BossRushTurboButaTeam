@@ -1,6 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://cxcntvr137lac"]
+[gd_scene load_steps=4 format=3 uid="uid://cxcntvr137lac"]
 
 [ext_resource type="PackedScene" uid="uid://f5mvlpww81f4" path="res://Scenes/main_char/main_char.tscn" id="1_d3hhv"]
+[ext_resource type="PackedScene" uid="uid://cuo4ahrqsu8px" path="res://Scenes/base_enemy/enemy.tscn" id="2_tyk7a"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_08vm1"]
 distance = -648.0
@@ -14,3 +15,7 @@ collision_mask = 16
 shape = SubResource("WorldBoundaryShape2D_08vm1")
 
 [node name="MainChar" parent="." instance=ExtResource("1_d3hhv")]
+position = Vector2(88, 249)
+
+[node name="Enemy" parent="." instance=ExtResource("2_tyk7a")]
+position = Vector2(759, 542)
