@@ -3,6 +3,11 @@ extends CharacterBody2D
 @export var speed = 100
 @export var jump_force = 200
 @export var health = 1000
+@export var projectile:PackedScene
+@export_category("Attacks_Stats")
+##Esto será utilizado en Timers, por lo que conviene usar un formato S.MM
+@export var attack_speed:float = 1.00
+@export var attack_damage:int = 100
 
 @onready var state_machine = $StateMachine
 

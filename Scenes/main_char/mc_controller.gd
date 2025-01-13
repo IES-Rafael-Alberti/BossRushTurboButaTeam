@@ -3,7 +3,7 @@ extends CharacterBody2D
 @export_category("Stats")
 @export var SPEED = 600.0
 @export var JUMP_VELOCITY = -600.0
-@export var health = 1000
+@export var health = 500
 @export var attack_damage = 100
 @onready var attack_area = $AttackArea
 
@@ -33,3 +33,9 @@ func _unhandled_input(event):
 					enemy.process_attack(attack_damage)
 		else:
 			print("failed attack")
+
+func process_attack(dmg) -> void:
+	health-=dmg
+	print(health)
+	if health<0:
+		queue_free()

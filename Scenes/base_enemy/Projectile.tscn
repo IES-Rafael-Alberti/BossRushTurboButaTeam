@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://badevognmcrjg"]
+
+[ext_resource type="Script" path="res://Scenes/base_enemy/projectile.gd" id="1_qrrlj"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1l0ee"]
+size = Vector2(20, 10)
+
+[node name="Projectile" type="Area2D"]
+collision_layer = 2
+collision_mask = 16
+script = ExtResource("1_qrrlj")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_1l0ee")
+debug_color = Color(0.390304, 0.611084, 0, 0.42)
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
