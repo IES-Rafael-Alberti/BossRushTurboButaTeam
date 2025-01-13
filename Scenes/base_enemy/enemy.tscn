@@ -1,11 +1,24 @@
-[gd_scene load_steps=2 format=3 uid="uid://cuo4ahrqsu8px"]
+[gd_scene load_steps=5 format=3 uid="uid://cuo4ahrqsu8px"]
+
+[ext_resource type="Script" path="res://Scenes/base_enemy/enemy.gd" id="1_7jr0o"]
+[ext_resource type="Script" path="res://Resources/StateMachine.gd" id="1_f2kpd"]
+[ext_resource type="Script" path="res://Scenes/base_enemy/StateMachine/idle.gd" id="2_7mumi"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0q732"]
 size = Vector2(129, 113)
 
 [node name="Enemy" type="CharacterBody2D"]
+collision_layer = 2
+script = ExtResource("1_7jr0o")
 
 [node name="EnemyCollision" type="CollisionShape2D" parent="."]
 position = Vector2(54.5, 46.5)
 shape = SubResource("RectangleShape2D_0q732")
 debug_color = Color(2.575e-06, 0.646838, 0.227039, 0.42)
+
+[node name="StateMachine" type="Node" parent="."]
+script = ExtResource("1_f2kpd")
+initial_state = NodePath("Idle")
+
+[node name="Idle" type="Node" parent="StateMachine"]
+script = ExtResource("2_7mumi")
