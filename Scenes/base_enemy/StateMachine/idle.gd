@@ -1,10 +1,9 @@
 extends State
 
+## Se ejecuta al entrar en el estado
 func enter(_msg := {}) -> void:
-	print("entered idle")
+	state_machine.transition_to("Attacking")
 
-func handle_input(_event:InputEvent) -> void:
-	pass
-
+## Se ejecuta al salir del estado
 func exit() -> void:
-	print("exit idle")
+	pass

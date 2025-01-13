@@ -1,7 +1,7 @@
 class_name StateMachine
 extends Node
 
-#Señal que se emite cuando la máquina pasa de un estado a otro
+## Señal que se emite cuando la máquina pasa de un estado a otro
 signal transitioned(state_name)
 
 #Estado en el que queremos que la máquina empiece. Normalmente, "Idle"
@@ -18,7 +18,7 @@ func _ready() -> void:
 		child.state_machine = self
 	#Entramos en el estado inicial
 	state.enter()
- #Desde aquí gestionaremos los Inputs (teclas pulsadas etc, sobre todo útil para personajes controlables)
+ ## Desde aquí gestionaremos los Inputs (teclas pulsadas etc, sobre todo útil para personajes controlables)
 func _unhandled_input(event: InputEvent) -> void:
 	state.handle_input(event)
 #Process pero desde el propio State
@@ -28,7 +28,7 @@ func _process(delta: float) -> void:
 func _physics_process(delta: float) -> void:
 	state.physics_update(delta)
 
-#Transicionador de la máquina entre estados
+## Transicionador de la máquina entre estados
 func transition_to(target_state_name: String, msg: Dictionary = {}) -> void:
 	print("SM: Transición ",state.name,">",target_state_name)
 	#Si el nodo alque queremos transicionar no existe:
