@@ -16,8 +16,7 @@ shape = SubResource("WorldBoundaryShape2D_08vm1")
 
 [node name="MainChar" parent="." instance=ExtResource("1_d3hhv")]
 position = Vector2(88, 249)
+collision_mask = 3
 
 [node name="Enemy" parent="." instance=ExtResource("2_tyk7a")]
 position = Vector2(759, 542)
-collision_layer = 2
-collision_mask = 0

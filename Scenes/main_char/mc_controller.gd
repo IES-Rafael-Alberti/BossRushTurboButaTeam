@@ -1,9 +1,10 @@
 extends CharacterBody2D
 
-
-const SPEED = 600.0
-const JUMP_VELOCITY = -600.0
-
+@export_category("Stats")
+@export var SPEED = 600.0
+@export var JUMP_VELOCITY = -600.0
+@export var health = 1000
+@export var attack_damage = 100
 @onready var attack_area = $AttackArea
 
 
@@ -17,15 +18,18 @@ func _physics_process(delta):
 	var direction = Input.get_axis("ui_left", "ui_right")
 	if direction:
 		velocity.x = direction * SPEED
+		#if velocity.x<0:
+			
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
-
 	move_and_slide()
 
 func _unhandled_input(event):
 	if Input.is_action_just_pressed("attack"):
 		var enemies_in_attack_area = attack_area.get_overlapping_bodies()
 		if enemies_in_attack_area.size()>0:
-			print("attacked")
+			for enemy in enemies_in_attack_area:
+				if enemy.has_method("process_attack"):
+					enemy.process_attack(attack_damage)
 		else:
 			print("failed attack")
