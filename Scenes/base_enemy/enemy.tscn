@@ -1,10 +1,11 @@
-[gd_scene load_steps=8 format=3 uid="uid://cuo4ahrqsu8px"]
+[gd_scene load_steps=9 format=3 uid="uid://cuo4ahrqsu8px"]
 
 [ext_resource type="Script" path="res://Scenes/base_enemy/enemy.gd" id="1_7jr0o"]
 [ext_resource type="Script" path="res://Resources/StateMachine.gd" id="1_f2kpd"]
 [ext_resource type="Script" path="res://Scenes/base_enemy/StateMachine/idle.gd" id="2_7mumi"]
 [ext_resource type="PackedScene" uid="uid://badevognmcrjg" path="res://Scenes/base_enemy/Projectile.tscn" id="2_m4clv"]
 [ext_resource type="Script" path="res://Scenes/base_enemy/StateMachine/attacking.gd" id="4_ham7m"]
+[ext_resource type="Script" path="res://Scenes/base_enemy/StateMachine/jump.gd" id="6_h35xf"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0q732"]
 size = Vector2(129, 113)
@@ -30,6 +31,9 @@ script = ExtResource("2_7mumi")
 
 [node name="Attacking" type="Node" parent="StateMachine"]
 script = ExtResource("4_ham7m")
+
+[node name="Jump" type="Node" parent="StateMachine"]
+script = ExtResource("6_h35xf")
 
 [node name="ProjectileGenerator" type="CollisionShape2D" parent="."]
 unique_name_in_owner = true
