@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://f5mvlpww81f4"]
+[gd_scene load_steps=11 format=3 uid="uid://f5mvlpww81f4"]
 
 [ext_resource type="Script" path="res://Scenes/main_char/mc_controller.gd" id="1_6wk8p"]
 [ext_resource type="Texture2D" uid="uid://lonso5hph87e" path="res://Assets/mc-removebg-preview.png" id="2_rgu1n"]
@@ -7,6 +7,7 @@
 [ext_resource type="Script" path="res://Scenes/main_char/StateMachine/idle.gd" id="5_ho2xp"]
 [ext_resource type="Script" path="res://Scenes/main_char/StateMachine/air.gd" id="6_tqgjv"]
 [ext_resource type="Script" path="res://Scenes/main_char/StateMachine/jump.gd" id="7_n0xew"]
+[ext_resource type="Script" path="res://Scenes/main_char/StateMachine/shoot.gd" id="8_oifls"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dr80s"]
 size = Vector2(31, 41)
@@ -37,8 +38,6 @@ texture = ExtResource("2_rgu1n")
 
 [node name="Attack" type="Node" parent="."]
 
-[node name="Shoot" type="Node" parent="."]
-
 [node name="Parry" type="Node" parent="."]
 
 [node name="StateMachine" type="Node" parent="."]
@@ -56,3 +55,6 @@ script = ExtResource("6_tqgjv")
 
 [node name="Jump" type="Node" parent="StateMachine"]
 script = ExtResource("7_n0xew")
+
+[node name="Shoot" type="Node" parent="StateMachine"]
+script = ExtResource("8_oifls")
