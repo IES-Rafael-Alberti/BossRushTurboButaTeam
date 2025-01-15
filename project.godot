@@ -11,7 +11,8 @@ config_version=5
 [application]
 
 config/name="Circus Nightmare"
-config/features=PackedStringArray("4.3", "GL Compatibility")
+run/main_scene="res://Scenes/Menu.tscn"
+config/features=PackedStringArray("4.2", "GL Compatibility")
 config/icon="res://icon.svg"
 
 [display]
@@ -30,6 +31,10 @@ folder_colors={
 "res://Scenes/": "green",
 "res://Scripts/": "red"
 }
+
+[gui]
+
+theme/custom_font="res://Resources/alagard.ttf"
 
 [layer_names]
 

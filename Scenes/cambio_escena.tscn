@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://d07ewl1eomwfc"]
+
+[ext_resource type="Texture2D" uid="uid://cf4ux1ys8pikd" path="res://Assets/Pablo Motos.jpg" id="1_yihc5"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(579, 325)
+scale = Vector2(1.69118, 1)
+texture = ExtResource("1_yihc5")

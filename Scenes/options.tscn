@@ -1,0 +1,71 @@
+[gd_scene load_steps=5 format=3 uid="uid://b8fik3pxw8m5g"]
+
+[ext_resource type="Texture2D" uid="uid://blpy6pwj6b4xh" path="res://Assets/pinga.jpg" id="1_k2g6v"]
+[ext_resource type="Script" path="res://Scenes/options.gd" id="1_qpr3s"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_3flhh"]
+font_size = 78
+font_color = Color(0, 0, 0, 1)
+outline_size = 5
+shadow_color = Color(0.178918, 0.209553, 0.330823, 0.784314)
+shadow_offset = Vector2(7, 11)
+
+[sub_resource type="LabelSettings" id="LabelSettings_m7vcy"]
+font_size = 60
+font_color = Color(0, 0, 0, 1)
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_qpr3s")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(575, 312)
+scale = Vector2(3.30229, 1.8553)
+texture = ExtResource("1_k2g6v")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 2
+offset_left = 437.0
+offset_top = 45.0
+offset_right = 740.0
+offset_bottom = 119.0
+text = "OPTIONS"
+label_settings = SubResource("LabelSettings_3flhh")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="BackButton" type="Button" parent="."]
+layout_mode = 2
+offset_left = 94.0
+offset_top = 45.0
+offset_right = 172.0
+offset_bottom = 102.0
+theme_override_font_sizes/font_size = 30
+text = "BACK"
+
+[node name="GridContainer" type="GridContainer" parent="."]
+custom_minimum_size = Vector2(500, 500)
+layout_mode = 0
+offset_left = 372.0
+offset_top = 155.0
+offset_right = 1250.0
+offset_bottom = 655.0
+columns = 2
+
+[node name="Label2" type="Label" parent="GridContainer"]
+layout_mode = 2
+text = "volume"
+label_settings = SubResource("LabelSettings_m7vcy")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HSlider" type="HSlider" parent="GridContainer"]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+
+[connection signal="pressed" from="BackButton" to="." method="_on_idioma_button_pressed"]
