@@ -7,6 +7,8 @@ extends CharacterBody2D
 @export var attack_damage = 100
 @onready var attack_area = $AttackArea
 
+func _process(delta):
+	pass
 
 func _physics_process(delta):
 	if not is_on_floor():
