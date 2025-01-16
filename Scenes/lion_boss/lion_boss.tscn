@@ -1,10 +1,11 @@
-[gd_scene load_steps=8 format=3 uid="uid://dijr4i4ga56rg"]
+[gd_scene load_steps=9 format=3 uid="uid://dijr4i4ga56rg"]
 
 [ext_resource type="Script" path="res://Scenes/lion_boss/lion_boss.gd" id="1_ff2op"]
 [ext_resource type="Script" path="res://Resources/StateMachine.gd" id="2_gw8tt"]
 [ext_resource type="Script" path="res://Scenes/lion_boss/state_machine/idle.gd" id="3_601rf"]
 [ext_resource type="Script" path="res://Scenes/lion_boss/state_machine/attack.gd" id="4_4tf06"]
 [ext_resource type="Script" path="res://Scenes/lion_boss/state_machine/walk.gd" id="5_v1phe"]
+[ext_resource type="Script" path="res://Scenes/lion_boss/state_machine/jump.gd" id="6_k2hpp"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gbrsr"]
 
@@ -31,6 +32,9 @@ script = ExtResource("4_4tf06")
 
 [node name="Walk" type="Node" parent="StateMachine"]
 script = ExtResource("5_v1phe")
+
+[node name="Jump" type="Node" parent="StateMachine"]
+script = ExtResource("6_k2hpp")
 
 [node name="AttackArea" type="Area2D" parent="."]
 unique_name_in_owner = true

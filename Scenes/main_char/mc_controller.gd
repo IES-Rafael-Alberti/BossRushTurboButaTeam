@@ -2,7 +2,7 @@ extends CharacterBody2D
 
 @export_category("Stats")
 @export var SPEED = 600.0
-@export var JUMP_VELOCITY = -600.0
+@export var JUMP_VELOCITY = -1200.0
 @export var health = 500
 @export var attack_damage = 100
 @onready var attack_area = $AttackArea

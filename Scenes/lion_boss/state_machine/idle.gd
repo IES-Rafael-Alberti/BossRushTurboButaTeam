@@ -7,7 +7,8 @@ func enter(_msg := {}) -> void:
 	pass
 
 func update(_delta:float) -> void:
-	pass
+	if owner.global_position.distance_to(main_char.global_position) > owner.walk_distance:
+		state_machine.transition_to("Walk")
 
 func exit() -> void:
 	pass
