@@ -22,12 +22,12 @@ func enter(_msg := {}) -> void:
 ## Se ejecuta al salir del estado
 func exit() -> void:
 	pass
-
-func update_player_position():
-	var raycast_left = owner.get_node("RayCastLeft")
-	var raycast_right = owner.get_node("RayCastRight")
-
-	if raycast_left.is_colliding():
-		player_position = raycast_left.get_collision_point()
-	elif raycast_right.is_colliding():
-		player_position = raycast_right.get_collision_point() 
+#
+#func update_player_position():
+	#var raycast_left = owner.get_node("RayCastLeft")
+	#var raycast_right = owner.get_node("RayCastRight")
+#
+	#if raycast_left.is_colliding():
+		#player_position = raycast_left.get_collision_point()
+	#elif raycast_right.is_colliding():
+		#player_position = raycast_right.get_collision_point() 

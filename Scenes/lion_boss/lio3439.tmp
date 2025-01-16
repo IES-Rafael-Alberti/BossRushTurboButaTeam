@@ -13,7 +13,7 @@ position = Vector2(885, 417)
 scale = Vector2(10, 10)
 
 [node name="MainChar" parent="." instance=ExtResource("2_8fhhx")]
-position = Vector2(239, 620)
+position = Vector2(209, 415)
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 collision_mask = 18
