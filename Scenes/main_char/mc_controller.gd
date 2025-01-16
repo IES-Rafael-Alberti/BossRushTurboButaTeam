@@ -11,7 +11,10 @@ extends CharacterBody2D
 func _ready():
 	ground.text = "hola"
 func _process(delta):
-	pass
+	if is_on_floor():
+		ground.text = "gr"
+	else:
+		ground.text = "notgr"
 
 func _physics_process(delta):
 	if not is_on_floor():

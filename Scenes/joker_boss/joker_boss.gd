@@ -1,8 +1,6 @@
-extends CharacterBody2D
+extends Boss
 
-
-const SPEED = 300.0
-const JUMP_VELOCITY = -400.0
+@export_category("Joker Abilities")
 @export var escape_distance = 200
 
 func _physics_process(delta):
@@ -12,8 +10,8 @@ func _physics_process(delta):
 	move_and_slide()
 
 func _process(delta):
-	var target_pos = (main_char.position - position).normalized()
-	print(main_char.velocity)
-	#print(position.distance_to(main_char.position))
-	if position.distance_to(main_char.position) > escape_distance:
-		move_toward(position.x,target_pos.x,SPEED)
+	var target_pos = (player.position - position).normalized()
+	#print(player.velocity)
+	#print(position.distance_to(player.position)) #FIXME print
+	if position.distance_to(player.position) > escape_distance:
+		move_toward(position.x,target_pos.x,speed)
