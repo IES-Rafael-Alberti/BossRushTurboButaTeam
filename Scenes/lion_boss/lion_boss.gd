@@ -6,6 +6,10 @@ extends CharacterBody2D
 @export var attack_damage = 50
 @export var jump_distance = 300.0
 @export var walk_distance = 75.0
+var player: Node
+
+func _ready():
+	search_for_player()
 
 func _process(delta):
 	pass
@@ -16,3 +20,6 @@ func _physics_process(delta):
 		velocity += get_gravity() * delta
 	 #Imprescindible para que el cuerpo procese físicas.
 	move_and_slide()
+
+func search_for_player():
+	player = get_node("../MainChar")

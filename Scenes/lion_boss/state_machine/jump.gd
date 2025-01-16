@@ -13,7 +13,7 @@ func update(_delta:float) -> void:
 		owner.global_position += owner.speed * _delta
 	if owner.is_on_floor():
 		is_jumping = false
-		if owner.global_position.distance_to(main_char.global_position) > owner.walk_distance:
+		if owner.global_position.distance_to(owner.player.global_position) > owner.walk_distance:
 			state_machine.transition_to("Walk")
 		else:
 			state_machine.transition_to("Idle")

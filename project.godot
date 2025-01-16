@@ -14,10 +14,6 @@ config/name="Circus Nightmare"
 config/features=PackedStringArray("4.3", "GL Compatibility")
 config/icon="res://icon.svg"
 
-[autoload]
-
-main_char="*res://Scenes/main_char/mc_controller.gd"
-
 [display]
 
 window/stretch/mode="canvas_items"
