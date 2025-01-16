@@ -1,9 +1,10 @@
-[gd_scene load_steps=7 format=3 uid="uid://dijr4i4ga56rg"]
+[gd_scene load_steps=8 format=3 uid="uid://dijr4i4ga56rg"]
 
 [ext_resource type="Script" path="res://Scenes/lion_boss/lion_boss.gd" id="1_ff2op"]
 [ext_resource type="Script" path="res://Resources/StateMachine.gd" id="2_gw8tt"]
 [ext_resource type="Script" path="res://Scenes/lion_boss/state_machine/idle.gd" id="3_601rf"]
 [ext_resource type="Script" path="res://Scenes/lion_boss/state_machine/attack.gd" id="4_4tf06"]
+[ext_resource type="Script" path="res://Scenes/lion_boss/state_machine/walk.gd" id="5_v1phe"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gbrsr"]
 
@@ -28,6 +29,9 @@ script = ExtResource("3_601rf")
 [node name="Attack" type="Node" parent="StateMachine"]
 script = ExtResource("4_4tf06")
 
+[node name="Walk" type="Node" parent="StateMachine"]
+script = ExtResource("5_v1phe")
+
 [node name="AttackArea" type="Area2D" parent="."]
 unique_name_in_owner = true
 collision_layer = 0
@@ -40,6 +44,14 @@ debug_color = Color(0.85809, 0.32529, 0.435231, 0.42)
 
 [node name="AttackCooldown" type="Timer" parent="."]
 unique_name_in_owner = true
+
+[node name="RayCastLeft" type="RayCast2D" parent="."]
+target_position = Vector2(-55, 0)
+collision_mask = 16
+
+[node name="RayCastRight" type="RayCast2D" parent="."]
+target_position = Vector2(46, 0)
+collision_mask = 16
 
 [connection signal="body_entered" from="AttackArea" to="StateMachine/Idle" method="_on_attack_area_body_entered"]
 [connection signal="timeout" from="AttackCooldown" to="StateMachine/Attack" method="_on_attack_cooldown_timeout"]
