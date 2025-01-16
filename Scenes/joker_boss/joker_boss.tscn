@@ -1,0 +1,27 @@
+[gd_scene load_steps=6 format=3 uid="uid://b4rfaqketx4sd"]
+
+[ext_resource type="Script" path="res://Resources/StateMachine.gd" id="1_g121h"]
+[ext_resource type="Script" path="res://Scenes/joker_boss/joker_boss.gd" id="1_ujamn"]
+[ext_resource type="Script" path="res://Scenes/joker_boss/state_machine/idle.gd" id="2_v053j"]
+[ext_resource type="Script" path="res://Scenes/joker_boss/state_machine/walk.gd" id="3_5rojw"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_bx8yw"]
+
+[node name="JokerBoss" type="CharacterBody2D"]
+scale = Vector2(3, 3)
+script = ExtResource("1_ujamn")
+
+[node name="JokerCol" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_bx8yw")
+
+[node name="Shoot" type="Node" parent="."]
+
+[node name="StateMachine" type="Node" parent="."]
+script = ExtResource("1_g121h")
+initial_state = NodePath("Idle")
+
+[node name="Idle" type="Node" parent="StateMachine"]
+script = ExtResource("2_v053j")
+
+[node name="Walk" type="Node" parent="StateMachine"]
+script = ExtResource("3_5rojw")

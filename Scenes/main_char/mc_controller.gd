@@ -5,13 +5,17 @@ extends CharacterBody2D
 @export var JUMP_VELOCITY = -600.0
 @export var health = 500
 @export var attack_damage = 100
-@onready var attack_area = $AttackArea
 
+@onready var ground = $ground
+
+func _ready():
+	ground.text = "hola"
+func _process(delta):
+	pass
 
 func _physics_process(delta):
 	if not is_on_floor():
 		velocity += get_gravity() * delta
-
 	if Input.is_action_just_pressed("ui_accept") and is_on_floor():
 		velocity.y = JUMP_VELOCITY
 
@@ -23,16 +27,16 @@ func _physics_process(delta):
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 	move_and_slide()
-
-func _unhandled_input(event):
-	if Input.is_action_just_pressed("attack"):
-		var enemies_in_attack_area = attack_area.get_overlapping_bodies()
-		if enemies_in_attack_area.size()>0:
-			for enemy in enemies_in_attack_area:
-				if enemy.has_method("process_attack"):
-					enemy.process_attack(attack_damage)
-		else:
-			print("failed attack")
+#
+#func _unhandled_input(event):
+	#if Input.is_action_just_pressed("attack"):
+		#var enemies_in_attack_area = attack_area.get_overlapping_bodies()
+		#if enemies_in_attack_area.size()>0:
+			#for enemy in enemies_in_attack_area:
+				#if enemy.has_method("process_attack"):
+					#enemy.process_attack(attack_damage)
+		#else:
+			#print("failed attack")
 
 func process_attack(dmg) -> void:
 	health-=dmg

@@ -1,0 +1,24 @@
+[gd_scene load_steps=4 format=3 uid="uid://br00bctxefu4y"]
+
+[ext_resource type="PackedScene" uid="uid://b4rfaqketx4sd" path="res://Scenes/joker_boss/joker_boss.tscn" id="1_e547c"]
+[ext_resource type="PackedScene" uid="uid://f5mvlpww81f4" path="res://Scenes/main_char/main_char.tscn" id="2_iss1i"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_5ajq3"]
+
+[node name="JokerBossfight" type="Node2D"]
+
+[node name="JokerBoss" parent="." instance=ExtResource("1_e547c")]
+position = Vector2(868, 587)
+collision_layer = 2
+collision_mask = 17
+
+[node name="MainChar" parent="." instance=ExtResource("2_iss1i")]
+position = Vector2(177, 576)
+scale = Vector2(3, 3)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+collision_mask = 18
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(-1, 643)
+shape = SubResource("WorldBoundaryShape2D_5ajq3")
