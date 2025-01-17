@@ -1,0 +1,52 @@
+[gd_scene load_steps=9 format=3 uid="uid://dijr4i4ga56rg"]
+
+[ext_resource type="Script" path="res://Scenes/lion_boss/lion_boss.gd" id="1_ff2op"]
+[ext_resource type="Script" path="res://Resources/StateMachine.gd" id="2_gw8tt"]
+[ext_resource type="Script" path="res://Scenes/lion_boss/state_machine/idle.gd" id="3_601rf"]
+[ext_resource type="Script" path="res://Scenes/lion_boss/state_machine/attack.gd" id="4_4tf06"]
+[ext_resource type="Script" path="res://Scenes/lion_boss/state_machine/walk.gd" id="5_v1phe"]
+[ext_resource type="Script" path="res://Scenes/lion_boss/state_machine/jump.gd" id="6_k2hpp"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gbrsr"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_q7o36"]
+size = Vector2(13, 20)
+
+[node name="LionBoss" type="CharacterBody2D"]
+collision_layer = 2
+script = ExtResource("1_ff2op")
+
+[node name="LionCol" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_gbrsr")
+
+[node name="StateMachine" type="Node" parent="."]
+script = ExtResource("2_gw8tt")
+initial_state = NodePath("Idle")
+
+[node name="Idle" type="Node" parent="StateMachine"]
+script = ExtResource("3_601rf")
+
+[node name="Attack" type="Node" parent="StateMachine"]
+script = ExtResource("4_4tf06")
+
+[node name="Walk" type="Node" parent="StateMachine"]
+script = ExtResource("5_v1phe")
+
+[node name="Jump" type="Node" parent="StateMachine"]
+script = ExtResource("6_k2hpp")
+
+[node name="AttackArea" type="Area2D" parent="."]
+unique_name_in_owner = true
+collision_layer = 0
+collision_mask = 16
+
+[node name="AttackAreaCol" type="CollisionShape2D" parent="AttackArea"]
+position = Vector2(-16.5, 0)
+shape = SubResource("RectangleShape2D_q7o36")
+debug_color = Color(0.85809, 0.32529, 0.435231, 0.42)
+
+[node name="AttackCooldown" type="Timer" parent="."]
+unique_name_in_owner = true
+
+[connection signal="body_entered" from="AttackArea" to="StateMachine/Idle" method="_on_attack_area_body_entered"]
+[connection signal="timeout" from="AttackCooldown" to="StateMachine/Attack" method="_on_attack_cooldown_timeout"]
