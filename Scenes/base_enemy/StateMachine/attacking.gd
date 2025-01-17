@@ -18,7 +18,7 @@ func _process(delta):
 	#print(attack_timer.time_left)
 
 func generate_projectile():
-	print("SM:Attacking:generating projectile")
+	#print("SM:Attacking:generating projectile") #FIXME print
 	var new_bullet = owner.projectile.instantiate()
 	projectile_generator.add_child(new_bullet)
 	new_bullet.position = projectile_generator.position #TODO añadir posición mínimamente variable

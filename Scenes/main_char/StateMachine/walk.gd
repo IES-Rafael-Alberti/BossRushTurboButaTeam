@@ -8,3 +8,5 @@ func physics_update(_delta:float) -> void:
 		owner.velocity.x = direction * owner.SPEED
 	else:
 		owner.velocity.x = move_toward(owner.velocity.x, 0, owner.SPEED)
+	if owner.velocity == Vector2(0,0):
+		state_machine.transition_to("Idle")
