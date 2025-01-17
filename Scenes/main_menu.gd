@@ -16,7 +16,7 @@ func _on_play_button_pressed():
 	credit_button.disabled = true
 	animation_player.play("fade_out")
 	await animation_player.animation_finished
-	get_tree().change_scene_to_file("res://Scenes/cambio_escena.tscn")
+	get_tree().change_scene_to_file("res://Scenes/lion_boss/lion_fight_proto.tscn")
 
 func _on_menu_button_pressed():
 	play_button.disabled = true
