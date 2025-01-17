@@ -1,0 +1,53 @@
+[gd_scene load_steps=4 format=3 uid="uid://yq87n6ekrnwc"]
+
+[ext_resource type="Script" path="res://Scenes/game_over.gd" id="1_en42y"]
+[ext_resource type="Texture2D" uid="uid://bvwuunea5ajbh" path="res://Assets/Juegos De Arcade.jpg" id="2_qtlxg"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_5bufh"]
+font_size = 110
+font_color = Color(0, 0, 0, 1)
+outline_size = 14
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_en42y")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(582, 327.75)
+scale = Vector2(1.58967, 0.955861)
+texture = ExtResource("2_qtlxg")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 299.0
+offset_top = 77.0
+offset_right = 884.0
+offset_bottom = 205.0
+text = "GAME OVER"
+label_settings = SubResource("LabelSettings_5bufh")
+horizontal_alignment = 1
+
+[node name="RetryButton" type="Button" parent="."]
+offset_left = 332.0
+offset_top = 237.0
+offset_right = 869.0
+offset_bottom = 314.0
+theme_override_font_sizes/font_size = 58
+text = "RETRY"
+
+[node name="QuitButton" type="Button" parent="."]
+layout_mode = 0
+offset_left = 336.0
+offset_top = 347.0
+offset_right = 872.0
+offset_bottom = 424.0
+theme_override_font_sizes/font_size = 58
+text = "QUIT"
+
+[connection signal="pressed" from="RetryButton" to="." method="_on_retry_button_pressed"]
+[connection signal="pressed" from="QuitButton" to="." method="_on_quit_button_pressed"]

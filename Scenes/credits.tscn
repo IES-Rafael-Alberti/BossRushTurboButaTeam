@@ -1,0 +1,105 @@
+[gd_scene load_steps=5 format=3 uid="uid://cmc6utc5d5tdj"]
+
+[ext_resource type="Script" path="res://Scenes/credits.gd" id="1_xma6h"]
+[ext_resource type="Texture2D" uid="uid://bfgb1qh8jr7d1" path="res://Assets/Hombres Calvos.jpg" id="2_wifu2"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_3md4k"]
+font_size = 62
+font_color = Color(0.12549, 0.113725, 0.458824, 1)
+outline_size = 13
+shadow_size = 7
+shadow_color = Color(0.211765, 0.239216, 0.764706, 0.423529)
+shadow_offset = Vector2(7, 10)
+
+[sub_resource type="Theme" id="Theme_7py6l"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 3.0
+offset_right = 3.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_xma6h")
+metadata/_edit_lock_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(573, 380.935)
+scale = Vector2(1.55978, 1.09975)
+texture = ExtResource("2_wifu2")
+
+[node name="BackButton" type="Button" parent="."]
+layout_mode = 0
+offset_left = 45.0
+offset_top = 26.0
+offset_right = 184.0
+offset_bottom = 85.0
+theme_override_font_sizes/font_size = 30
+text = "BACK"
+
+[node name="Title" type="Label" parent="."]
+layout_mode = 0
+offset_left = 305.0
+offset_top = 53.0
+offset_right = 827.0
+offset_bottom = 150.0
+text = "Circus  Nightmare"
+label_settings = SubResource("LabelSettings_3md4k")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -387.0
+offset_top = -176.0
+offset_right = 388.0
+offset_bottom = 188.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_7py6l")
+bbcode_enabled = true
+text = "[center]
+[font_size=40] A game by TurboButa Team [/font_size]
+
+[font_size=40] Made With Godot Engine [/font_size]
+
+[font_size=45] Turbobuta team: [/font_size]
+
+Sergio Hiniesta Mendoza - Designer, Artist
+
+Alicia Gómez Revilla- UI Programmer
+
+Eduardo Daza Villanueva- Production, Artist
+
+Javi Jiménez-Alfaro Hacha- Main Programmer
+
+Jerai Muñoz Palacios - Programmer
+
+[font_size=32] Special Thanks to: [/font_size]
+
+Francesco, for being hooked enough to find every bug
+
+Mario, for his support and interest in the game
+
+Javi, for his critical analyzing and comedic relief
+
+Alejandro, for his wise design advice and humor
+
+David, for his planning and organizing support
+
+Godot Community, for creating such an amazing tool
+
+Special thanks to Mr. Worldwide Pitbull for his amazing support through his songs
+
+
+
+
+
+"
+
+[connection signal="pressed" from="BackButton" to="." method="_on_back_button_pressed"]
