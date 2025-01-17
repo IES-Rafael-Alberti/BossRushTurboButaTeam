@@ -19,7 +19,7 @@ func jump():
 	P1_middle.y += 100
 	
 	is_jumping = true
-	owner.velocity.y = owner.jump_force
+	#owner.velocity.y = owner.jump_force
 	
 func transtions():
 	if owner.is_on_floor():
@@ -30,6 +30,7 @@ func transtions():
 			state_machine.transition_to("Idle")
 
 func update(_delta:float) -> void:
+	print(time)
 	if is_jumping:
 		owner.position = bezier(time)
 		time += _delta

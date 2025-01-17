@@ -2,7 +2,7 @@ class_name Boss
 extends CharacterBody2D
 
 @export var speed = 300.0
-@export var jump_force = -3000.0
+#@export var jump_force = -3000.0
 @export var attack_damage = 50
 var player: Node
 var direction
@@ -17,6 +17,7 @@ func _physics_process(delta):
 		velocity += get_gravity() * delta
 	 #Imprescindible para que el cuerpo procese físicas.
 	move_and_slide()
+	#TODO Hay que tener en cuenta la vida del player, porque cuando llega a 0 no reconoce la posición
 	direction = (player.global_position - global_position).normalized()
 	if !is_flipped:
 		if direction.x > 0:
