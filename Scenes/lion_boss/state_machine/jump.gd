@@ -1,22 +1,29 @@
 extends State
 
-var jump_force = Vector2(0, -300)
 var is_jumping = false
 
 func enter(_msg := {}) -> void:
-	is_jumping = true
-	owner.speed = jump_force
+	jump()
 	print("Jump ON")
 
-func update(_delta:float) -> void:
-	if is_jumping:
-		owner.global_position += owner.speed * _delta
+func jump():
+	is_jumping = true
+	owner.velocity.y = owner.jump_force
+	
+func transtions():
 	if owner.is_on_floor():
 		is_jumping = false
 		if owner.global_position.distance_to(owner.player.global_position) > owner.walk_distance:
 			state_machine.transition_to("Walk")
 		else:
 			state_machine.transition_to("Idle")
+
+
+func update(_delta:float) -> void:
+	if is_jumping:
+		owner.global_position.x += owner.speed * _delta
+	transtions()
+
 
 func exit() -> void:
 	print("Jump OFF")
