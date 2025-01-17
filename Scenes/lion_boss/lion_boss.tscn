@@ -14,7 +14,6 @@ size = Vector2(13, 20)
 
 [node name="LionBoss" type="CharacterBody2D"]
 collision_layer = 2
-collision_mask = 17
 script = ExtResource("1_ff2op")
 
 [node name="LionCol" type="CollisionShape2D" parent="."]

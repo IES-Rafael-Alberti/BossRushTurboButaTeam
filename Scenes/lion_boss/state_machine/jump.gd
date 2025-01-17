@@ -15,14 +15,16 @@ func transtions():
 		is_jumping = false
 		if owner.global_position.distance_to(owner.player.global_position) > owner.walk_distance:
 			state_machine.transition_to("Walk")
-		else:
-			state_machine.transition_to("Idle")
+		#else:
+			#state_machine.transition_to("Idle")
 
 
 func update(_delta:float) -> void:
 	if is_jumping:
-		owner.global_position.x += owner.speed * _delta
+		var direction = (owner.player.global_position - owner.global_position).normalized()
+		owner.global_position.x += owner.speed *sign(direction.x)* _delta
 	transtions()
+	#owner.global_position += direction * walk_speed * _delta
 
 
 func exit() -> void:

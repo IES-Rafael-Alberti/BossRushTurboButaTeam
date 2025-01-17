@@ -6,7 +6,7 @@ func enter(_msg := {}) -> void:
 	print("walk ON")
 
 func update(_delta:float) -> void:
-	if (owner.global_position.x - owner.player.global_position.x) <= owner.jump_distance:
+	if owner.global_position.distance_to(owner.player.global_position) <= owner.jump_distance:
 		state_machine.transition_to("Jump")
 	print(owner.global_position)
 	var direction = (owner.player.global_position - owner.global_position).normalized()
