@@ -1,0 +1,51 @@
+[gd_scene load_steps=10 format=3 uid="uid://cuo4ahrqsu8px"]
+
+[ext_resource type="Script" path="res://Scenes/base_enemy/enemy.gd" id="1_7jr0o"]
+[ext_resource type="Script" path="res://Resources/StateMachine.gd" id="1_f2kpd"]
+[ext_resource type="Script" path="res://Scenes/base_enemy/StateMachine/idle.gd" id="2_7mumi"]
+[ext_resource type="PackedScene" uid="uid://badevognmcrjg" path="res://Scenes/base_enemy/Projectile.tscn" id="2_m4clv"]
+[ext_resource type="Script" path="res://Scenes/base_enemy/StateMachine/attacking.gd" id="4_ham7m"]
+[ext_resource type="Script" path="res://Scenes/base_enemy/StateMachine/jump.gd" id="6_h35xf"]
+[ext_resource type="Texture2D" uid="uid://53px0m8nl5ic" path="res://Assets/proto/Bowser.png" id="7_owhcr"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0q732"]
+size = Vector2(129, 113)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lslnh"]
+size = Vector2(1, 112)
+
+[node name="Enemy" type="CharacterBody2D"]
+collision_layer = 2
+script = ExtResource("1_7jr0o")
+projectile = ExtResource("2_m4clv")
+
+[node name="EnemyCollision" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_0q732")
+debug_color = Color(2.575e-06, 0.646838, 0.227039, 0.42)
+
+[node name="StateMachine" type="Node" parent="."]
+script = ExtResource("1_f2kpd")
+initial_state = NodePath("Idle")
+
+[node name="Idle" type="Node" parent="StateMachine"]
+script = ExtResource("2_7mumi")
+
+[node name="Attacking" type="Node" parent="StateMachine"]
+script = ExtResource("4_ham7m")
+
+[node name="Jump" type="Node" parent="StateMachine"]
+script = ExtResource("6_h35xf")
+
+[node name="ProjectileGenerator" type="CollisionShape2D" parent="."]
+unique_name_in_owner = true
+position = Vector2(-65, 0)
+shape = SubResource("RectangleShape2D_lslnh")
+
+[node name="Attack_Timer" type="Timer" parent="."]
+unique_name_in_owner = true
+wait_time = 0.95
+
+[node name="PlaceholderSprite" type="Sprite2D" parent="."]
+scale = Vector2(0.276471, 0.27647)
+texture = ExtResource("7_owhcr")
+flip_h = true
