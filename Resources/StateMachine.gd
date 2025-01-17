@@ -1,6 +1,9 @@
 class_name StateMachine
 extends Node
 
+## CÓDIGO DE LA MÁQUINA DE ESTADOS BASE
+# Este script lo que hace es gestionar los estados entre sí. La lógica y funcionalidad irá dentro de cada estado.
+
 ## Señal que se emite cuando la máquina pasa de un estado a otro
 signal transitioned(state_name)
 

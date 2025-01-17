@@ -1,7 +1,7 @@
 [gd_scene load_steps=11 format=3 uid="uid://f5mvlpww81f4"]
 
 [ext_resource type="Script" path="res://Scenes/main_char/mc_controller.gd" id="1_6wk8p"]
-[ext_resource type="Texture2D" uid="uid://lonso5hph87e" path="res://Assets/mc-removebg-preview.png" id="2_rgu1n"]
+[ext_resource type="Texture2D" uid="uid://cbbhyhl5hqck4" path="res://Assets/base personaje bossrush clase.png" id="2_xq7jk"]
 [ext_resource type="Script" path="res://Resources/StateMachine.gd" id="3_surd7"]
 [ext_resource type="Script" path="res://Scenes/main_char/StateMachine/walk.gd" id="4_7yts5"]
 [ext_resource type="Script" path="res://Scenes/main_char/StateMachine/idle.gd" id="5_ho2xp"]
@@ -10,17 +10,19 @@
 [ext_resource type="Script" path="res://Scenes/main_char/StateMachine/shoot.gd" id="8_oifls"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dr80s"]
-size = Vector2(31, 41)
+size = Vector2(31, 25)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tbxx2"]
 size = Vector2(27, 20)
 
 [node name="MainChar" type="CharacterBody2D"]
+scale = Vector2(4, 4)
 collision_layer = 16
 collision_mask = 3
 script = ExtResource("1_6wk8p")
 
 [node name="MCCol" type="CollisionShape2D" parent="."]
+position = Vector2(0, 3.5)
 shape = SubResource("RectangleShape2D_dr80s")
 
 [node name="AttackArea" type="Area2D" parent="."]
@@ -28,13 +30,12 @@ collision_layer = 0
 collision_mask = 2
 
 [node name="AttackCol" type="CollisionShape2D" parent="AttackArea"]
-position = Vector2(29, -4)
+position = Vector2(29, 6)
 shape = SubResource("RectangleShape2D_tbxx2")
 debug_color = Color(1, 0.14902, 0, 0.419608)
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-scale = Vector2(0.0639121, 0.0639121)
-texture = ExtResource("2_rgu1n")
+texture = ExtResource("2_xq7jk")
 
 [node name="Attack" type="Node" parent="."]
 
