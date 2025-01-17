@@ -14,7 +14,10 @@ func enter(_msg := {}) -> void:
 func jump():
 	P0_lion_position = owner.position
 	P2_player_position = owner.player.position
-	P1_middle = P0_lion_position - P2_player_position
+	if owner.is_flipped:
+		P1_middle = P2_player_position - P0_lion_position
+	else:
+		P1_middle = P0_lion_position - P2_player_position
 	P1_middle.y += 100
 	
 	is_jumping = true
