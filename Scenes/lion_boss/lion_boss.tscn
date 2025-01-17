@@ -50,6 +50,8 @@ debug_color = Color(0.85809, 0.32529, 0.435231, 0.42)
 unique_name_in_owner = true
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-2.38419e-07, -2.38419e-07)
+scale = Vector2(0.625, 0.625)
 texture = ExtResource("7_jqslp")
 
 [connection signal="body_entered" from="AttackArea" to="StateMachine/Idle" method="_on_attack_area_body_entered"]

@@ -14,7 +14,7 @@ scale = Vector2(10, 10)
 jump_force = -500.0
 
 [node name="MainChar" parent="." instance=ExtResource("2_8fhhx")]
-position = Vector2(71, 605)
+position = Vector2(83, 580)
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 collision_mask = 18
