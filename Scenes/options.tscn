@@ -1,7 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://b8fik3pxw8m5g"]
+[gd_scene load_steps=9 format=3 uid="uid://b8fik3pxw8m5g"]
 
-[ext_resource type="Texture2D" uid="uid://blpy6pwj6b4xh" path="res://Assets/pinga.jpg" id="1_k2g6v"]
 [ext_resource type="Script" path="res://Scenes/options.gd" id="1_qpr3s"]
+[ext_resource type="Texture2D" uid="uid://5rdj3yjv804a" path="res://Assets/Pegatina.jpg" id="2_2wyas"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_3flhh"]
 font_size = 78
@@ -11,8 +11,19 @@ shadow_color = Color(0.178918, 0.209553, 0.330823, 0.784314)
 shadow_offset = Vector2(7, 11)
 
 [sub_resource type="LabelSettings" id="LabelSettings_m7vcy"]
-font_size = 60
-font_color = Color(0, 0, 0, 1)
+font_size = 50
+
+[sub_resource type="LabelSettings" id="LabelSettings_ie6jf"]
+font_size = 50
+
+[sub_resource type="LabelSettings" id="LabelSettings_8lwko"]
+font_size = 50
+
+[sub_resource type="LabelSettings" id="LabelSettings_pc0aa"]
+font_size = 50
+
+[sub_resource type="LabelSettings" id="LabelSettings_5t4pn"]
+font_size = 50
 
 [node name="Control" type="Control"]
 layout_mode = 3
@@ -24,9 +35,9 @@ grow_vertical = 2
 script = ExtResource("1_qpr3s")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(575, 312)
-scale = Vector2(3.30229, 1.8553)
-texture = ExtResource("1_k2g6v")
+position = Vector2(574.5, 327.934)
+scale = Vector2(3.08533, 1.77032)
+texture = ExtResource("2_2wyas")
 
 [node name="Label" type="Label" parent="."]
 layout_mode = 2
@@ -41,31 +52,82 @@ vertical_alignment = 1
 
 [node name="BackButton" type="Button" parent="."]
 layout_mode = 2
-offset_left = 94.0
-offset_top = 45.0
-offset_right = 172.0
-offset_bottom = 102.0
+offset_left = 45.0
+offset_top = 37.0
+offset_right = 147.0
+offset_bottom = 94.0
 theme_override_font_sizes/font_size = 30
 text = "BACK"
 
 [node name="GridContainer" type="GridContainer" parent="."]
 custom_minimum_size = Vector2(500, 500)
 layout_mode = 0
-offset_left = 372.0
-offset_top = 155.0
-offset_right = 1250.0
-offset_bottom = 655.0
+offset_left = 292.0
+offset_top = 165.0
+offset_right = 1170.0
+offset_bottom = 665.0
 columns = 2
 
 [node name="Label2" type="Label" parent="GridContainer"]
 layout_mode = 2
-text = "volume"
+text = "Master volume"
 label_settings = SubResource("LabelSettings_m7vcy")
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="HSlider" type="HSlider" parent="GridContainer"]
+[node name="MasterSlider" type="HSlider" parent="GridContainer"]
 custom_minimum_size = Vector2(200, 0)
 layout_mode = 2
 
+[node name="Label" type="Label" parent="GridContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+text = "Music volume"
+label_settings = SubResource("LabelSettings_ie6jf")
+
+[node name="MusicSlider" type="HSlider" parent="GridContainer"]
+layout_mode = 2
+
+[node name="Label3" type="Label" parent="GridContainer"]
+layout_mode = 2
+text = "SFX volume"
+label_settings = SubResource("LabelSettings_8lwko")
+
+[node name="sfxSlider" type="HSlider" parent="GridContainer"]
+layout_mode = 2
+
+[node name="Label4" type="Label" parent="GridContainer"]
+layout_mode = 2
+text = "Window Mode"
+label_settings = SubResource("LabelSettings_pc0aa")
+
+[node name="windowMode" type="OptionButton" parent="GridContainer"]
+layout_mode = 2
+item_count = 3
+popup/item_0/text = "Windowed"
+popup/item_0/id = 0
+popup/item_1/text = "Borderless Widowed"
+popup/item_1/id = 1
+popup/item_2/text = "Fullscreen"
+popup/item_2/id = 2
+
+[node name="Label5" type="Label" parent="GridContainer"]
+layout_mode = 2
+text = "Language"
+label_settings = SubResource("LabelSettings_5t4pn")
+
+[node name="Language" type="OptionButton" parent="GridContainer"]
+layout_mode = 2
+item_count = 2
+popup/item_0/text = "English"
+popup/item_0/id = 0
+popup/item_1/text = "Español"
+popup/item_1/id = 1
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
 [connection signal="pressed" from="BackButton" to="." method="_on_idioma_button_pressed"]
+[connection signal="item_selected" from="GridContainer/windowMode" to="." method="_on_window_mode_item_selected"]

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ve6nyom0isv3"
-path="res://.godot/imported/pitbull.jpg-7620b31ee788884d86c9e12f5f063a0f.ctex"
+uid="uid://5rdj3yjv804a"
+path="res://.godot/imported/Pegatina.jpg-ee18b08fef2ef8e2eb6f5132d2c62516.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/pitbull.jpg"
-dest_files=["res://.godot/imported/pitbull.jpg-7620b31ee788884d86c9e12f5f063a0f.ctex"]
+source_file="res://Assets/Pegatina.jpg"
+dest_files=["res://.godot/imported/Pegatina.jpg-ee18b08fef2ef8e2eb6f5132d2c62516.ctex"]
 
 [params]
 
