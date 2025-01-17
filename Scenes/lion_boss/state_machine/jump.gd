@@ -29,29 +29,20 @@ func transtions():
 		else:
 			state_machine.transition_to("Idle")
 
-
-#func update(_delta:float) -> void:
-	#if is_jumping:
-		#var direction = (owner.player.global_position - owner.global_position).normalized()
-		##owner.global_position.x += owner.speed *sign(direction.x)* _delta
-		#owner.global_position.x = owner.player.global_position.x
-	#transtions()
-	##owner.global_position += direction * walk_speed * _delta
-
+func update(_delta:float) -> void:
+	if is_jumping:
+		owner.position = bezier(time)
+		time += _delta
+		if time >= jump_duration:
+			time = 0
+			is_jumping = false
+	transtions()
 	
-func bezier(t):
+func bezier(t): #ORO
 	var q0 = P0_lion_position.lerp(P1_middle,t)
 	var q1 = P1_middle.lerp(P2_player_position,t)
 	var r = q0.lerp(q1,t)
 	return r
-	
-func _process(delta: float) -> void:
-	if is_jumping:
-		owner.position = bezier(time)
-		time += delta
-		if time >= jump_duration:
-			time = 0
-			is_jumping = false
-		
+
 func exit() -> void:
 	print("Jump OFF")

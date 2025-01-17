@@ -7,8 +7,10 @@ func enter(_msg := {}) -> void:
 	pass
 
 func update(_delta:float) -> void:
-	if owner.global_position.distance_to(owner.player.global_position) > owner.walk_distance:
+	if owner.global_position.distance_to(owner.player.global_position) < owner.walk_distance || owner.global_position.distance_to(owner.player.global_position) > owner.jump_distance:
 		state_machine.transition_to("Walk")
+	elif owner.player.is_on_floor() && owner.global_position.distance_to(owner.player.global_position) < owner.jump_distance && owner.global_position.distance_to(owner.player.global_position) > owner.walk_distance:
+		state_machine.transition_to("Jump")
 
 func exit() -> void:
 	pass
