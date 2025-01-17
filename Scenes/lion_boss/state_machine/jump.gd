@@ -3,7 +3,6 @@ extends State
 @onready var P0_lion_position
 @onready var P2_player_position
 @onready var P1_middle 
-@onready var time = 0
 @export var jump_duration = 1
 
 var is_jumping = false
@@ -30,13 +29,10 @@ func transtions():
 			state_machine.transition_to("Idle")
 
 func update(_delta:float) -> void:
-	print(time)
+	print(owner.jumpTime)
 	if is_jumping:
-		owner.position = bezier(time)
-		time += _delta
-		if time >= jump_duration:
-			time = 0
-			is_jumping = false
+		owner.position = bezier(owner.jumpTime)
+		owner.jumpTime += _delta
 	transtions()
 	
 func bezier(t): #ORO

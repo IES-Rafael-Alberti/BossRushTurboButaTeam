@@ -3,6 +3,8 @@ extends State
 var walk_speed = 300.0
 
 func enter(_msg := {}) -> void:
+	#reset del timer de salto
+	owner.jumpTime = 0
 	print("walk ON")
 
 func update(_delta:float) -> void:
