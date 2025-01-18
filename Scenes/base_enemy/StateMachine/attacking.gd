@@ -10,12 +10,12 @@ func _ready():
 func enter(_msg := {}):
 	times_attacked = 0
 	attack_timer.wait_time = owner.attack_speed
-	print(attack_timer.wait_time)
+	print(attack_timer.wait_time) #FIXME print
 	attack_timer.start()
 	
 func _process(delta):
 	pass
-	#print(attack_timer.time_left)
+	#print(attack_timer.time_left) #FIXME print
 
 func generate_projectile():
 	#print("SM:Attacking:generating projectile") #FIXME print
