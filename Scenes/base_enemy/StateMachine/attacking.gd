@@ -10,7 +10,7 @@ func _ready():
 func enter(_msg := {}):
 	times_attacked = 0
 	attack_timer.wait_time = owner.attack_speed
-	print(attack_timer.wait_time) #FIXME print
+	#print(attack_timer.wait_time) #FIXME print
 	attack_timer.start()
 	
 func _process(delta):
