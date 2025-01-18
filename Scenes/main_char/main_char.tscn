@@ -1,9 +1,10 @@
-[gd_scene load_steps=13 format=3 uid="uid://f5mvlpww81f4"]
+[gd_scene load_steps=14 format=3 uid="uid://f5mvlpww81f4"]
 
 [ext_resource type="Script" path="res://Scenes/main_char/mc_controller.gd" id="1_6wk8p"]
 [ext_resource type="Texture2D" uid="uid://cbbhyhl5hqck4" path="res://Assets/base personaje bossrush clase.png" id="2_xq7jk"]
 [ext_resource type="Script" path="res://Resources/StateMachine.gd" id="3_surd7"]
 [ext_resource type="Script" path="res://Scenes/main_char/StateMachine/walk.gd" id="4_7yts5"]
+[ext_resource type="Script" path="res://Scenes/main_char/StateMachine/attack.gd" id="4_w3ywv"]
 [ext_resource type="Script" path="res://Scenes/main_char/StateMachine/idle.gd" id="5_ho2xp"]
 [ext_resource type="Script" path="res://Scenes/main_char/StateMachine/air.gd" id="6_tqgjv"]
 [ext_resource type="Script" path="res://Scenes/main_char/StateMachine/jump.gd" id="7_n0xew"]
@@ -45,13 +46,14 @@ debug_color = Color(1, 0.14902, 0, 0.419608)
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("2_xq7jk")
 
-[node name="Attack" type="Node" parent="."]
-
 [node name="Parry" type="Node" parent="."]
 
 [node name="StateMachine" type="Node" parent="."]
 script = ExtResource("3_surd7")
 initial_state = NodePath("Idle")
+
+[node name="Attack" type="Node" parent="StateMachine"]
+script = ExtResource("4_w3ywv")
 
 [node name="Walk" type="Node" parent="StateMachine"]
 script = ExtResource("4_7yts5")

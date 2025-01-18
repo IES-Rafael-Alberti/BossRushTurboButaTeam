@@ -12,34 +12,11 @@ extends CharacterBody2D
 @onready var shoot_bar: TextureProgressBar = $ShootBar
 
 var facing = 1 #TODO
-func _process(delta):
-	shoot_bar.value += shoot_bar.step
 
 func _physics_process(delta):
 	if not is_on_floor():
 		velocity += get_gravity() * delta
-
-	#if Input.is_action_just_pressed("ui_accept") and is_on_floor():
-		#velocity.y = JUMP_VELOCITY
-
-	#var direction = Input.get_axis("ui_left", "ui_right")
-	#if direction:
-		#velocity.x = direction * SPEED
-		##if velocity.x<0:
-			#
-	#else:
-		#velocity.x = move_toward(velocity.x, 0, SPEED)
 	move_and_slide()
-
-func _unhandled_input(event):
-	if Input.is_action_just_pressed("attack"):
-		var enemies_in_attack_area = attack_area.get_overlapping_bodies()
-		if enemies_in_attack_area.size()>0:
-			for enemy in enemies_in_attack_area:
-				if enemy.has_method("process_attack"):
-					enemy.process_attack(attack_damage)
-		else:
-			print("failed attack")
 
 func process_attack(dmg) -> void:
 	health-=dmg
