@@ -12,7 +12,6 @@ func enter(_msg := {}) -> void:
 	print("Jump ON")
 
 func jump():
-	#TODO Ajustar el punto al cual salta el león
 	P0_lion_position = owner.position
 	P2_player_position = owner.player.position
 	if owner.is_flipped:

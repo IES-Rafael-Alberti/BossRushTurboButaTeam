@@ -9,11 +9,11 @@ distance = -650.0
 [node name="LionFightProto" type="Node2D"]
 
 [node name="LionBoss" parent="." instance=ExtResource("1_ryr66")]
-position = Vector2(1042, 537)
+position = Vector2(1035, 548)
 scale = Vector2(10, 10)
 
 [node name="MainChar" parent="." instance=ExtResource("2_8fhhx")]
-position = Vector2(83, 580)
+position = Vector2(46, 579)
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 collision_mask = 18
