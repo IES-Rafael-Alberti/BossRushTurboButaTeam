@@ -4,6 +4,7 @@ extends Boss
 @export_category("Lion Abilities")
 @export var jump_distance = 1000.0
 @export var walk_distance = 500.0
+@export var push_strength = 500
 # time para el salto
 var jumpTime = 0
 

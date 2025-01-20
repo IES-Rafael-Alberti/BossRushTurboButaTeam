@@ -12,7 +12,7 @@
 size = Vector2(19, 16)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_q7o36"]
-size = Vector2(23, 19)
+size = Vector2(16, 19)
 
 [node name="LionBoss" type="CharacterBody2D"]
 collision_layer = 2
@@ -48,7 +48,7 @@ collision_layer = 0
 collision_mask = 16
 
 [node name="AttackAreaCol" type="CollisionShape2D" parent="AttackArea"]
-position = Vector2(-11.5, 0)
+position = Vector2(-8, 0)
 shape = SubResource("RectangleShape2D_q7o36")
 debug_color = Color(0.85809, 0.32529, 0.435231, 0.42)
 

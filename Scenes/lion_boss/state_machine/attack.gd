@@ -8,8 +8,6 @@ extends State
 func enter(_msg := {}) -> void:
 	#Al entrar en el estado, empezamos el reloj para que cada vez que este salte pegue. (el tiempo está en el timer, wait_time)
 	attack_cooldown.start()
-func exit() -> void:
-	pass
 
 func update(_delta:float) -> void:
 	#Por cada frame, comprobamos si no hay cuerpos en la zona de ataque para pasar a "Idle"
@@ -29,7 +27,12 @@ func attack_player():
 		for body in bodies:
 			#Si este cuerpo tiene el método "process_attack" (esto hace que el juego no pete pidiendo un método a un cuerpo que no lo tiene)
 			if body.has_method("process_attack"):
-				#le atacamos, con el daño del owner de este estado.
+				#le atacamos, con el daño del owner de este estado y le empujamos.
 				body.process_attack(owner.attack_damage)
+				var push_direction = (owner.direction + Vector2(0,-1)).normalized()
+				body.velocity += push_direction * owner.push_strength
 	#Volvemos a iniciar el reloj de ataque.
 	attack_cooldown.start()
+
+func exit() -> void:
+	pass

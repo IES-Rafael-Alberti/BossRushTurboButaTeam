@@ -21,7 +21,6 @@ func _physics_process(delta):
 	direction = (player.global_position - global_position).normalized()
 	if !is_flipped:
 		if direction.x > 0:
-			print("flip")
 			scale.x *= -1
 			is_flipped = true
 	else:
