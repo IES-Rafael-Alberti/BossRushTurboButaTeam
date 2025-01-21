@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://5rdj3yjv804a"
-path="res://.godot/imported/Pegatina.jpg-ee18b08fef2ef8e2eb6f5132d2c62516.ctex"
+uid="uid://lonso5hph87e"
+path="res://.godot/imported/mc-removebg-preview.png-edb4c814192ea840da253b2426f9f9b3.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Pegatina.jpg"
-dest_files=["res://.godot/imported/Pegatina.jpg-ee18b08fef2ef8e2eb6f5132d2c62516.ctex"]
+source_file="res://Assets/ui/mc-removebg-preview.png"
+dest_files=["res://.godot/imported/mc-removebg-preview.png-edb4c814192ea840da253b2426f9f9b3.ctex"]
 
 [params]
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cf4ux1ys8pikd"
-path="res://.godot/imported/Pablo Motos.jpg-74f21694c8464f13fb25e6d5df96040a.ctex"
+uid="uid://5rdj3yjv804a"
+path="res://.godot/imported/Pegatina.jpg-f5c37bf3c7d767104b7d98124a1cf7ca.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Pablo Motos.jpg"
-dest_files=["res://.godot/imported/Pablo Motos.jpg-74f21694c8464f13fb25e6d5df96040a.ctex"]
+source_file="res://Assets/ui/Pegatina.jpg"
+dest_files=["res://.godot/imported/Pegatina.jpg-f5c37bf3c7d767104b7d98124a1cf7ca.ctex"]
 
 [params]
 

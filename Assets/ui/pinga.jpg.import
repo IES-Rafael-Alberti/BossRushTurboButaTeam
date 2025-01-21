@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bvwuunea5ajbh"
-path="res://.godot/imported/Juegos De Arcade.jpg-2d97f79a4b408d9bc724037eb32521d6.ctex"
+uid="uid://blpy6pwj6b4xh"
+path="res://.godot/imported/pinga.jpg-b57e822f689f90fdccf3d7161dc813bd.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Juegos De Arcade.jpg"
-dest_files=["res://.godot/imported/Juegos De Arcade.jpg-2d97f79a4b408d9bc724037eb32521d6.ctex"]
+source_file="res://Assets/ui/pinga.jpg"
+dest_files=["res://.godot/imported/pinga.jpg-b57e822f689f90fdccf3d7161dc813bd.ctex"]
 
 [params]
 

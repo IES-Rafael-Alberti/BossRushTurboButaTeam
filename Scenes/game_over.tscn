@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://yq87n6ekrnwc"]
 
 [ext_resource type="Script" path="res://Scenes/game_over.gd" id="1_en42y"]
-[ext_resource type="Texture2D" uid="uid://bvwuunea5ajbh" path="res://Assets/Juegos De Arcade.jpg" id="2_qtlxg"]
+[ext_resource type="Texture2D" uid="uid://bvwuunea5ajbh" path="res://Assets/ui/Juegos De Arcade.jpg" id="2_qtlxg"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_5bufh"]
 font_size = 110

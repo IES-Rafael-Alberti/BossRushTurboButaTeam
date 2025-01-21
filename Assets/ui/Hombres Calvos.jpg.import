@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://blpy6pwj6b4xh"
-path="res://.godot/imported/pinga.jpg-8f88faf016e3f421d306f9f8f84d9d76.ctex"
+uid="uid://bfgb1qh8jr7d1"
+path="res://.godot/imported/Hombres Calvos.jpg-4929ff05808391339e9c37bbd06b5032.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/pinga.jpg"
-dest_files=["res://.godot/imported/pinga.jpg-8f88faf016e3f421d306f9f8f84d9d76.ctex"]
+source_file="res://Assets/ui/Hombres Calvos.jpg"
+dest_files=["res://.godot/imported/Hombres Calvos.jpg-4929ff05808391339e9c37bbd06b5032.ctex"]
 
 [params]
 

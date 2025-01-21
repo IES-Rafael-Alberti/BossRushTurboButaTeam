@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c4jjp337jghy1"
-path="res://.godot/imported/circofondomenu.jpg-34bdf3ef36103d0a98a7c41abd7ca158.ctex"
+uid="uid://cf4ux1ys8pikd"
+path="res://.godot/imported/Pablo Motos.jpg-cfc6dc7cd93f502d1e61c507c380e31b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/circofondomenu.jpg"
-dest_files=["res://.godot/imported/circofondomenu.jpg-34bdf3ef36103d0a98a7c41abd7ca158.ctex"]
+source_file="res://Assets/ui/Pablo Motos.jpg"
+dest_files=["res://.godot/imported/Pablo Motos.jpg-cfc6dc7cd93f502d1e61c507c380e31b.ctex"]
 
 [params]
 
