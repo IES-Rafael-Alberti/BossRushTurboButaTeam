@@ -17,4 +17,3 @@ func _on_idioma_button_pressed():
 func _on_back_button_pressed():
 	print("JERAI")
 	get_tree().change_scene_to_file("res://Scenes/Menu.tscn")
-

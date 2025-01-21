@@ -33,6 +33,7 @@ label_settings = SubResource("LabelSettings_5bufh")
 horizontal_alignment = 1
 
 [node name="RetryButton" type="Button" parent="."]
+layout_mode = 0
 offset_left = 332.0
 offset_top = 237.0
 offset_right = 869.0
