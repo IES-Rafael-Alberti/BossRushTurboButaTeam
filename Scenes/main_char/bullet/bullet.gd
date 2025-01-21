@@ -1,14 +1,16 @@
-extends CharacterBody2D
+extends RigidBody2D
 
 @export var damage = 50
-
+#@export var initial_force: Vector2 = Vector2(300,-1000)
 func _ready():
 	pass
+	#apply_impulse(initial_force)
 
 func _process(delta):
-	position.x += 2 #HACK tremendo
+	pass
+	#position.x += 2 #HACK tremendo
 func _physics_process(delta):
-	velocity += get_gravity() * delta
+	pass
 
 func _on_body_entered(body):
 	if body.has_method("process_attack"):

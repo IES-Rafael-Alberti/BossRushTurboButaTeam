@@ -14,7 +14,10 @@ position = Vector2(1035, 548)
 scale = Vector2(10, 10)
 
 [node name="MainChar" parent="." instance=ExtResource("2_8fhhx")]
-position = Vector2(102, 567)
+position = Vector2(83, 580)
+min_shoot_range = Vector2(50, -100)
+max_shoot_range = Vector2(1000, -2000)
+force_by_frame = Vector2(5, -10)
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 collision_mask = 18
