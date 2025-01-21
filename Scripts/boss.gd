@@ -1,6 +1,7 @@
 class_name Boss
 extends CharacterBody2D
 
+@export var health = 500
 @export var speed = 300.0
 #@export var jump_force = -3000.0
 @export var attack_damage = 50
@@ -30,3 +31,8 @@ func _physics_process(delta):
 
 func search_for_player():
 	player = get_node("../MainChar")
+
+func process_attack(dmg:float):
+	health-=dmg
+	if health<=0:
+		queue_free()

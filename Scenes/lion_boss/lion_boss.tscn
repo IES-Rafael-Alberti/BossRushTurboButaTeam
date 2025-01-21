@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://dijr4i4ga56rg"]
+[gd_scene load_steps=11 format=3 uid="uid://dijr4i4ga56rg"]
 
 [ext_resource type="Script" path="res://Scenes/lion_boss/lion_boss.gd" id="1_ff2op"]
 [ext_resource type="Script" path="res://Resources/StateMachine.gd" id="2_gw8tt"]
@@ -9,7 +9,10 @@
 [ext_resource type="Texture2D" uid="uid://cgqv61exo8ree" path="res://Assets/leon Sprite.png" id="7_jqslp"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gbrsr"]
-size = Vector2(19, 16)
+size = Vector2(19, 3)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_u73gt"]
+size = Vector2(16, 19)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_q7o36"]
 size = Vector2(16, 19)
@@ -19,12 +22,20 @@ collision_layer = 2
 script = ExtResource("1_ff2op")
 
 [node name="LionCol" type="CollisionShape2D" parent="."]
-position = Vector2(-1, 6.74725e-06)
+position = Vector2(-7.5, 3.02772e-05)
 rotation = -1.5708
 shape = SubResource("RectangleShape2D_gbrsr")
 one_way_collision = true
 one_way_collision_margin = 16.0
-debug_color = Color(0.594588, 0.539889, 0.230627, 0.42)
+debug_color = Color(0.733333, 0.470588, 0, 0.596078)
+
+[node name="ReciveDmg" type="Area2D" parent="."]
+position = Vector2(-1, 0)
+collision_layer = 0
+collision_mask = 32
+
+[node name="ReciveDmgCol" type="CollisionShape2D" parent="ReciveDmg"]
+shape = SubResource("RectangleShape2D_u73gt")
 
 [node name="StateMachine" type="Node" parent="."]
 script = ExtResource("2_gw8tt")
