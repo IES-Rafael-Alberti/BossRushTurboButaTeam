@@ -1,19 +1,24 @@
-[gd_scene load_steps=6 format=3 uid="uid://kfxre3sdahyw"]
+[gd_scene load_steps=7 format=3 uid="uid://kfxre3sdahyw"]
 
 [ext_resource type="Script" path="res://Scenes/hypnotist_boss/hypnotist_boss.gd" id="1_8yvub"]
 [ext_resource type="Texture2D" uid="uid://cuu41ly4646y6" path="res://Assets/hipnotista.png" id="2_acioj"]
 [ext_resource type="Script" path="res://Resources/StateMachine.gd" id="3_ix7qk"]
 [ext_resource type="Script" path="res://Scenes/hypnotist_boss/state_machine/teleport.gd" id="3_ra3l5"]
+[ext_resource type="Script" path="res://Scenes/hypnotist_boss/state_machine/idle.gd" id="4_cs0kg"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_yf6x2"]
-size = Vector2(11, 20)
+size = Vector2(20, 11)
 
 [node name="CharacterBody2D" type="CharacterBody2D"]
 script = ExtResource("1_8yvub")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-1.5, 0)
+[node name="HypnotistCol" type="CollisionShape2D" parent="."]
+position = Vector2(-1.5, 8.74228e-08)
+rotation = -1.5708
 shape = SubResource("RectangleShape2D_yf6x2")
+one_way_collision = true
+one_way_collision_margin = 20.0
+debug_color = Color(0.319444, 0.622256, 0.171574, 0.42)
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(0, -4.76837e-07)
@@ -25,10 +30,11 @@ script = ExtResource("3_ix7qk")
 initial_state = NodePath("Idle")
 
 [node name="Idle" type="Node" parent="StateMachine"]
+script = ExtResource("4_cs0kg")
 
 [node name="Teleport" type="Node" parent="StateMachine"]
 script = ExtResource("3_ra3l5")
 
-[node name="Walk" type="Node" parent="StateMachine"]
+[node name="Walk" type="Node" parent="."]
 
-[node name="Attack" type="Node" parent="StateMachine"]
+[node name="Attack" type="Node" parent="."]

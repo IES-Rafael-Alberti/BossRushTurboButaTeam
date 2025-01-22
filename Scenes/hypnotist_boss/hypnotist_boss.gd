@@ -4,6 +4,10 @@ extends Boss
 @export_category("hypnotist Abilities")
 #@export var walk_distance = 500.0
 #@export var push_strength = 500
+@export var min_tp_time = 3.0
+@export var max_tp_time = 5.0
+var next_tp_time
+var time_since_last_tp = 0
 
 func _process(delta):
-	pass
+	time_since_last_tp += delta
