@@ -8,7 +8,6 @@ func physics_update(_delta:float) -> void:
 	if direction:
 		owner.velocity.x = direction * owner.SPEED
 		last_dir = sign(direction)
-		print("bool da",boolean_to_number(owner.facing))
 		if last_dir != boolean_to_number(owner.facing):
 			owner.facing = !owner.facing
 			owner.scale.x *= -1

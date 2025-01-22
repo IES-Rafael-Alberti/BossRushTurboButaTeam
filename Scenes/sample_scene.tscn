@@ -19,7 +19,7 @@ position = Vector2(92, 577)
 attack_damage = 1000
 min_shoot_range = Vector2(50, -100)
 max_shoot_range = Vector2(1000, -2000)
-force_by_frame = Vector2(5, -10)
+force_by_frame = Vector2(20, -30)
 
 [node name="Enemy" parent="." instance=ExtResource("2_tyk7a")]
 position = Vector2(759, 591)
