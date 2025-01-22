@@ -28,8 +28,7 @@ scale = Vector2(4, 4)
 collision_layer = 16
 collision_mask = 3
 script = ExtResource("1_6wk8p")
-min_shoot_range = Vector2(300, -1000)
-max_shoot_range = Vector2(3000, -7000)
+force_by_frame = Vector2(5, -10)
 
 [node name="MCCol" type="CollisionShape2D" parent="."]
 position = Vector2(0, 3.5)
