@@ -12,7 +12,7 @@
 [ext_resource type="Script" path="res://Scenes/main_char/StateMachine/shoot.gd" id="8_oifls"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dr80s"]
-size = Vector2(31, 25)
+size = Vector2(18.25, 24)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tbxx2"]
 size = Vector2(27, 20)
@@ -28,11 +28,10 @@ scale = Vector2(4, 4)
 collision_layer = 16
 collision_mask = 3
 script = ExtResource("1_6wk8p")
-min_shoot_range = Vector2(300, -1000)
-max_shoot_range = Vector2(3000, -7000)
+force_by_frame = Vector2(5, -10)
 
 [node name="MCCol" type="CollisionShape2D" parent="."]
-position = Vector2(0, 3.5)
+position = Vector2(-1.625, 3.75)
 shape = SubResource("RectangleShape2D_dr80s")
 
 [node name="AttackArea" type="Area2D" parent="."]
@@ -40,7 +39,7 @@ collision_layer = 0
 collision_mask = 2
 
 [node name="AttackCol" type="CollisionShape2D" parent="AttackArea"]
-position = Vector2(29, 6)
+position = Vector2(21.25, 5)
 shape = SubResource("RectangleShape2D_tbxx2")
 debug_color = Color(1, 0.14902, 0, 0.419608)
 
