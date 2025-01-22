@@ -14,15 +14,14 @@ func physics_update(_delta:float) -> void:
 	#if owner.velocity.y < 0:
 		#owner.velocity.y *= owner.AIR_FRICTION
 	if direction:
-		#owner.velocity.x = direction * owner.SPEED
-		owner.velocity.x += (((direction * owner.SPEED) - owner.velocity.x))
+		owner.velocity.x = direction * owner.SPEED
 		last_dir = sign(direction)
 		if last_dir != boolean_to_number(owner.facing):
-			owner.facing = last_dir > 0
-			owner.scale.x *= last_dir
-func exit() -> void:
-	print(last_dir)
-	owner.facing = last_dir > 0
+			owner.facing = !owner.facing
+			owner.scale.x *= -1
+#func exit() -> void:
+	#print(last_dir)
+	#owner.facing = last_dir > 0
 	#owner.scale.x *= last_dir
 
 func boolean_to_number(value: bool) -> int:
