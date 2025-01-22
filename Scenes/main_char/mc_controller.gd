@@ -16,7 +16,8 @@ var awaited_frames = 0
 @onready var shoot_bar: TextureProgressBar = $ShootBar
 @onready var state_machine: StateMachine = $StateMachine
 
-var facing = 1 #TODO
+var facing:bool = true #true izqader
+#DEPTODO #izqader 1(scale +) deraizq -1(scale -) 
 
 func _physics_process(delta):
 	if not is_on_floor():

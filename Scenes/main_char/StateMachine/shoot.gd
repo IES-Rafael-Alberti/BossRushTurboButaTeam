@@ -21,6 +21,10 @@ func generate_arrow(force:Vector2) -> void:
 	var arrow:RigidBody2D = load("res://Scenes/main_char/bullet/arrow.tscn").instantiate()
 	arrow.global_position = owner.attack_area.global_position
 	add_child(arrow)
+	force.x*=boolean_to_number(owner.facing)
 	arrow.apply_impulse(force)
 	owner.shoot_bar.value = 0
 	print(force) #FIXME print
+
+func boolean_to_number(value: bool) -> int:
+	return 1 if value else -1
