@@ -1,6 +1,6 @@
 [gd_scene load_steps=9 format=3 uid="uid://b8fik3pxw8m5g"]
 
-[ext_resource type="Script" path="res://Scenes/options.gd" id="1_qpr3s"]
+[ext_resource type="Script" path="res://Scenes/ui/options.gd" id="1_qpr3s"]
 [ext_resource type="Texture2D" uid="uid://5rdj3yjv804a" path="res://Assets/Pegatina.jpg" id="2_2wyas"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_3flhh"]

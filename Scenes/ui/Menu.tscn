@@ -1,6 +1,6 @@
 [gd_scene load_steps=10 format=3 uid="uid://bbtinlckxl0p2"]
 
-[ext_resource type="Script" path="res://Scenes/main_menu.gd" id="1_6q8ci"]
+[ext_resource type="Script" path="res://Scenes/ui/main_menu.gd" id="1_6q8ci"]
 [ext_resource type="Texture2D" uid="uid://c4jjp337jghy1" path="res://Assets/circofondomenu.jpg" id="1_b216n"]
 [ext_resource type="FontFile" uid="uid://cdgviiim5ysqe" path="res://Resources/alagard.ttf" id="2_ust0v"]
 [ext_resource type="AudioStream" uid="uid://dnj6vg5b188rl" path="res://Assets/539512__tpainterforfun__myschoolproj.mp3" id="4_6s1if"]

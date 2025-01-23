@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://cmc6utc5d5tdj"]
 
-[ext_resource type="Script" path="res://Scenes/credits.gd" id="1_xma6h"]
+[ext_resource type="Script" path="res://Scenes/ui/credits.gd" id="1_xma6h"]
 [ext_resource type="Texture2D" uid="uid://bfgb1qh8jr7d1" path="res://Assets/Hombres Calvos.jpg" id="2_wifu2"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_3md4k"]
