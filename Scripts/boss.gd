@@ -5,7 +5,7 @@ extends CharacterBody2D
 @export var speed = 300.0
 #@export var jump_force = -3000.0
 @export var attack_damage = 50
-var player: Node
+var player: CharacterBody2D
 var direction
 var is_flipped = false
 
