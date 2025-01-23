@@ -3,9 +3,11 @@ extends State
 @onready var attack_area = %AttackArea
 
 func enter(_msg := {}) -> void:
-	pass
+	owner.timerWalk = 0
 
 func update(_delta:float) -> void:
+	#owner.timerWalk += _delta
+	#if owner.timerWalk >= 1.0:
 	if owner.global_position.distance_to(owner.player.global_position) < owner.walk_distance || owner.global_position.distance_to(owner.player.global_position) > owner.jump_distance:
 		state_machine.transition_to("Walk")
 	elif owner.player.is_on_floor() && owner.global_position.distance_to(owner.player.global_position) < owner.jump_distance && owner.global_position.distance_to(owner.player.global_position) > owner.walk_distance:

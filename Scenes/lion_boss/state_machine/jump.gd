@@ -23,16 +23,16 @@ func jump():
 func transtions():
 	if owner.is_on_floor():
 		is_jumping = false
-		if owner.global_position.distance_to(owner.player.global_position) < owner.walk_distance:
-			state_machine.transition_to("Walk")
-		else:
-			state_machine.transition_to("Idle")
+		#if owner.global_position.distance_to(owner.player.global_position) < owner.walk_distance:
+			#state_machine.transition_to("Walk")
+		#else:
+		state_machine.transition_to("Idle")
 
 func update(_delta:float) -> void:
 	if is_jumping:
 		owner.position = bezier(owner.jumpTime)
 		owner.jumpTime += _delta
-	transtions()
+		transtions()
 	
 func bezier(t): #ORO
 	var q0 = P0_lion_position.lerp(P1_middle,t)

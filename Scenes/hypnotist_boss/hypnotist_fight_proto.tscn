@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://kfxre3sdahyw" path="res://Scenes/hypnotist_boss/hypnotist_boss.tscn" id="1_phkkg"]
 [ext_resource type="PackedScene" uid="uid://f5mvlpww81f4" path="res://Scenes/main_char/main_char.tscn" id="2_2ov1n"]
-[ext_resource type="Texture2D" uid="uid://om7wehtajo0o" path="res://Assets/fondoResize.png" id="3_j2ace"]
+[ext_resource type="Texture2D" uid="uid://dvjk8ns74j4q7" path="res://Assets/fondo.png" id="3_7qpvq"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_mrxf1"]
 distance = -17.0
@@ -30,8 +30,8 @@ shape = SubResource("WorldBoundaryShape2D_mrxf1")
 [node name="Sprite2D" type="Sprite2D" parent="."]
 z_index = -1
 position = Vector2(578, 326)
-scale = Vector2(3, 3)
-texture = ExtResource("3_j2ace")
+scale = Vector2(2.4, 2.4)
+texture = ExtResource("3_7qpvq")
 
 [node name="StaticBody2D2" type="StaticBody2D" parent="."]
 position = Vector2(1023, 134)
