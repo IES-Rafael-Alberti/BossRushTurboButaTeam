@@ -8,6 +8,8 @@ extends Boss
 @export var max_tp_time = 5.0
 var next_tp_time
 var time_since_last_tp = 0
+@onready var attack_area = %AttackArea
+
 
 func _process(delta):
 	time_since_last_tp += delta
