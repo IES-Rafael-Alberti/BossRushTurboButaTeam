@@ -1,0 +1,26 @@
+[gd_scene load_steps=3 format=3 uid="uid://dbge7ppi0vsv4"]
+
+[ext_resource type="Script" path="res://Scenes/ui/menu_juego_ui.gd" id="1_72fcx"]
+[ext_resource type="Texture2D" uid="uid://d1qa0mlbfd1rv" path="res://Assets/Hearts/PNG/health_bar/health_bar_decoration.png" id="3_ywini"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_72fcx")
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+position = Vector2(906, 106)
+scale = Vector2(2.79412, 2.79412)
+texture = ExtResource("3_ywini")
+
+[node name="TextureProgressBar" type="ProgressBar" parent="."]
+layout_mode = 0
+offset_left = 849.0
+offset_top = 91.0
+offset_right = 997.0
+offset_bottom = 120.0
+value = 100.0

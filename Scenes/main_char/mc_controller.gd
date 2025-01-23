@@ -3,7 +3,6 @@ extends CharacterBody2D
 @export_category("Stats")
 @export var SPEED = 600.0
 @export var JUMP_VELOCITY = -1200.0
-@export var health = 500
 @export var attack_damage = 100
 @export_category("Shooting")
 @export var min_shoot_range = Vector2(50,-100)
@@ -18,6 +17,7 @@ var awaited_frames = 0
 
 var facing:bool = true #true izqader
 #DEPTODO #izqader 1(scale +) deraizq -1(scale -) 
+
 
 func _physics_process(delta):
 	if not is_on_floor():
@@ -38,7 +38,8 @@ func process_attack(dmg) -> void:
 	
 func recieve_attack(dmg) -> void:
 	print("damage recieved") #FIXME print
-	health-=dmg
-	print(health)
-	if health<=0:
+	GameManager.health_player-=dmg
+	GameManager.HealthPlayerBar.emit()
+	print(GameManager.health_player)
+	if GameManager.health_player<=0:
 		queue_free()
