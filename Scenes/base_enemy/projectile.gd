@@ -4,7 +4,7 @@ extends Area2D
 @export var speed = 2
 
 func _process(delta):
-	position.x -= speed #TODO balas que persigan al jugador
+	position.x -= speed
 
 func _on_body_entered(body):
 	if body.has_method("process_attack"):
