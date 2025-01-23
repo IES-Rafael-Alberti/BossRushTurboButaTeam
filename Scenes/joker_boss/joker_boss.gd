@@ -1,8 +1,7 @@
 extends Boss
 
 @export var safe_distance:float
-@export_category("Projectile")
-@export var projectile_speed:int
-@export var projectile_damage:int
+@export_category("Shooting")
 @export var attack_speed:float
-var projectile = preload("res://Scenes/base_enemy/Projectile.tscn")
+#daño y velocidad del proyectil configurable en escena projectile
+@export var projectile = preload("res://Scenes/base_enemy/Projectile.tscn")
