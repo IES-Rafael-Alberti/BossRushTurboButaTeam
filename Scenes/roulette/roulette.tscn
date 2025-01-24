@@ -4,22 +4,6 @@
 [ext_resource type="Texture2D" uid="uid://c8lqebj3o4q6p" path="res://images-removebg-preview.png" id="2_gig6l"]
 [ext_resource type="Texture2D" uid="uid://ljgcoobidw5t" path="res://Assets/wheel-arrow.png" id="3_edao7"]
 
-[sub_resource type="Animation" id="Animation_xjipb"]
-resource_name = "rotation"
-loop_mode = 1
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:rotation")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 1),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [0.0, 6.28319]
-}
-
 [sub_resource type="Animation" id="Animation_ogic6"]
 length = 0.001
 tracks/0/type = "value"
@@ -33,6 +17,22 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 0,
 "values": [0.0]
+}
+
+[sub_resource type="Animation" id="Animation_xjipb"]
+resource_name = "rotation"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 31.4159]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_n766s"]
