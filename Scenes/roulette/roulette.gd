@@ -1,14 +1,20 @@
 extends Node2D
 
+@onready var roll_interval_timer: Timer = $roll_interval_timer
+@onready var timer: Timer = $Timer
 @onready var wheel_sprite = $Sprite2D
 @onready var animation_player = $AnimationPlayer
-@export var spin_duration:int = 3
+@export var roll_interval:float = 30
+@export var spin_duration:float = 3
 var stop_at = 0
 var stopping_wheel = false
 var result = 0
+
 func _ready():
 	result = randi_range(0,8)
 	spin()
+	roll_interval_timer.wait_time = roll_interval
+	roll_interval_timer.timeout.connect(spin)
 
 func spin():
 	animation_player.play("rotation")
@@ -35,15 +41,18 @@ func process_result():
 			print("1")
 		2:
 			print("2")
+			
 		3:
 			print("3")
 		4:
 			print("4")
 		5:
 			print("5")
+			
 		6:
 			print("6")
 		7:
 			print("7")
 		8:
 			print("8")
+			

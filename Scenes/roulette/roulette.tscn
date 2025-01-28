@@ -58,4 +58,4 @@ position = Vector2(-82, 2.38419e-07)
 scale = Vector2(0.0566406, 0.0566406)
 texture = ExtResource("3_edao7")
 
-[node name="Camera2D" type="Camera2D" parent="."]
+[node name="roll_interval_timer" type="Timer" parent="."]
