@@ -59,3 +59,4 @@ scale = Vector2(0.0566406, 0.0566406)
 texture = ExtResource("3_edao7")
 
 [node name="roll_interval_timer" type="Timer" parent="."]
+autostart = true

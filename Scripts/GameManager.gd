@@ -15,3 +15,9 @@ signal bonus_dmg_on
 signal bonus_dmg_off
 
 var is_boss_lion:bool
+
+func change_game_speed(gamespeed:float):
+	Engine.time_scale = gamespeed
+
+func reset_properties():
+	Engine.time_scale = 1

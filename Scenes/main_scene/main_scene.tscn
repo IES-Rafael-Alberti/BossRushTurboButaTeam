@@ -43,7 +43,7 @@ shape = SubResource("WorldBoundaryShape2D_fppy2")
 
 [node name="Roulette" parent="." instance=ExtResource("2_lbayn")]
 position = Vector2(1018, 96)
-roll_interval = 10.0
+roll_interval = 5.0
 
 [node name="Bosses" type="Node" parent="."]
 
