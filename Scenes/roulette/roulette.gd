@@ -1,7 +1,6 @@
 extends Node2D
 
 @onready var roll_interval_timer: Timer = $roll_interval_timer
-@onready var timer: Timer = $Timer
 @onready var wheel_sprite = $Sprite2D
 @onready var animation_player = $AnimationPlayer
 @export var roll_interval:float = 30
@@ -11,7 +10,8 @@ var stopping_wheel = false
 var result = 0
 
 func _ready():
-	result = randi_range(0,8)
+	game_manager.is_boss_lion = true
+	result = randi_range(0,1)
 	spin()
 	roll_interval_timer.wait_time = roll_interval
 	roll_interval_timer.timeout.connect(spin)
@@ -35,24 +35,24 @@ func _process(delta):
 
 func process_result():
 	match result:
+		#0:
+			#print("0")
+		#1:
+			#print("1")
 		0:
-			print("0")
+			print("showing_lion")
+			game_manager.swap_boss.emit(true)
+		#3:
+			#print("3")
+		#4:
+			#print("4")
 		1:
-			print("1")
-		2:
-			print("2")
-			
-		3:
-			print("3")
-		4:
-			print("4")
-		5:
-			print("5")
-			
-		6:
-			print("6")
-		7:
-			print("7")
-		8:
-			print("8")
-			
+			print("showing_joker")
+			game_manager.swap_boss.emit(false)
+#
+		#6:
+			#print("6")
+		#7:
+			#print("7")
+		##8:
+			##print("8")

@@ -30,7 +30,7 @@ func _physics_process(delta):
 			is_flipped = false
 
 func search_for_player():
-	player = get_node("../MainChar")
+	player = get_node("%MainChar")
 
 func process_attack(dmg:float):
 	health-=dmg
