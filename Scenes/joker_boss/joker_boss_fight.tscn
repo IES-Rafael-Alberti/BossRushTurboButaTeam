@@ -1,0 +1,43 @@
+[gd_scene load_steps=4 format=3 uid="uid://bokbxhsuvulp7"]
+
+[ext_resource type="PackedScene" uid="uid://baehtdpqmyrb" path="res://Scenes/joker_boss/joker_boss.tscn" id="1_in5u4"]
+[ext_resource type="PackedScene" uid="uid://f5mvlpww81f4" path="res://Scenes/main_char/main_char.tscn" id="2_m7ppk"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_ncasw"]
+distance = -650.0
+
+[node name="JokerBossFight" type="Node2D"]
+
+[node name="JokerBoss" parent="." instance=ExtResource("1_in5u4")]
+position = Vector2(1021, 596)
+safe_distance = 600.0
+attack_speed = 2.0
+jump_distance = 700.0
+
+[node name="MainChar" parent="." instance=ExtResource("2_m7ppk")]
+position = Vector2(68, 570)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+collision_mask = 18
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+shape = SubResource("WorldBoundaryShape2D_ncasw")
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="."]
+position = Vector2(14.58, 0)
+collision_mask = 18
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2"]
+position = Vector2(630, 0)
+rotation = 1.5708
+shape = SubResource("WorldBoundaryShape2D_ncasw")
+
+[node name="StaticBody2D3" type="StaticBody2D" parent="."]
+position = Vector2(1152, 0)
+rotation = 3.14159
+collision_mask = 18
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D3"]
+position = Vector2(654, -5.71745e-05)
+rotation = 1.5708
+shape = SubResource("WorldBoundaryShape2D_ncasw")

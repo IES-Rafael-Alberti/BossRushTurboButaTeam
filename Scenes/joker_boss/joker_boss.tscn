@@ -1,0 +1,61 @@
+[gd_scene load_steps=10 format=3 uid="uid://baehtdpqmyrb"]
+
+[ext_resource type="Script" path="res://Scenes/joker_boss/joker_boss.gd" id="1_no2kk"]
+[ext_resource type="Script" path="res://Resources/StateMachine.gd" id="2_ow3dh"]
+[ext_resource type="Script" path="res://Scenes/joker_boss/idle.gd" id="3_1j2vh"]
+[ext_resource type="Script" path="res://Scenes/joker_boss/attack.gd" id="4_j5vvu"]
+[ext_resource type="Script" path="res://Scenes/joker_boss/walk.gd" id="5_xkgwd"]
+[ext_resource type="Script" path="res://Scenes/joker_boss/jump.gd" id="6_r06w1"]
+[ext_resource type="Script" path="res://Scenes/joker_boss/air.gd" id="7_pkaer"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lkv3y"]
+size = Vector2(19, 3)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_67xsd"]
+size = Vector2(0.833332, 20)
+
+[node name="JokerBoss" type="CharacterBody2D"]
+scale = Vector2(6, 4)
+collision_layer = 2
+collision_mask = 17
+script = ExtResource("1_no2kk")
+safe_distance = 500.0
+jump_force = 1000.0
+
+[node name="JokerCol" type="CollisionShape2D" parent="."]
+unique_name_in_owner = true
+position = Vector2(-7.5, 3.02772e-05)
+rotation = -1.5708
+shape = SubResource("RectangleShape2D_lkv3y")
+one_way_collision = true
+one_way_collision_margin = 16.0
+debug_color = Color(0.85098, 0.141176, 1, 0.596078)
+
+[node name="StateMachine" type="Node" parent="."]
+script = ExtResource("2_ow3dh")
+initial_state = NodePath("Idle")
+
+[node name="Idle" type="Node" parent="StateMachine"]
+script = ExtResource("3_1j2vh")
+
+[node name="Attack" type="Node" parent="StateMachine"]
+script = ExtResource("4_j5vvu")
+
+[node name="Walk" type="Node" parent="StateMachine"]
+script = ExtResource("5_xkgwd")
+
+[node name="Jump" type="Node" parent="StateMachine"]
+script = ExtResource("6_r06w1")
+
+[node name="Air" type="Node" parent="StateMachine"]
+script = ExtResource("7_pkaer")
+
+[node name="ProjectileGenerator" type="Area2D" parent="."]
+unique_name_in_owner = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ProjectileGenerator"]
+position = Vector2(-9.58333, 0)
+shape = SubResource("RectangleShape2D_67xsd")
+
+[node name="Attack_Timer" type="Timer" parent="."]
+unique_name_in_owner = true
