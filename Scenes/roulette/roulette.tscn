@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://b8av3f7mqwkmy"]
+[gd_scene load_steps=8 format=3 uid="uid://b8av3f7mqwkmy"]
 
 [ext_resource type="Script" path="res://Scenes/roulette/roulette.gd" id="1_tr5bb"]
 [ext_resource type="Texture2D" uid="uid://c8lqebj3o4q6p" path="res://images-removebg-preview.png" id="2_gig6l"]
@@ -41,6 +41,9 @@ _data = {
 "rotation": SubResource("Animation_xjipb")
 }
 
+[sub_resource type="LabelSettings" id="LabelSettings_wggst"]
+font_size = 48
+
 [node name="Roulette" type="Node2D"]
 script = ExtResource("1_tr5bb")
 
@@ -60,3 +63,10 @@ texture = ExtResource("3_edao7")
 
 [node name="roll_interval_timer" type="Timer" parent="."]
 autostart = true
+
+[node name="last_action" type="Label" parent="."]
+offset_left = -283.0
+offset_top = -29.0
+offset_right = -155.0
+offset_bottom = 31.0
+label_settings = SubResource("LabelSettings_wggst")

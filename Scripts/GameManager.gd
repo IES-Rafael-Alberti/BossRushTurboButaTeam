@@ -9,8 +9,7 @@ signal fast_mode_on
 signal fast_mode_off
 signal slow_mode_on
 signal slow_mode_off
-signal straight_shooting_on
-signal straight_shooting_off
+signal swap_shooting
 signal bonus_dmg_on
 signal bonus_dmg_off
 
@@ -21,3 +20,4 @@ func change_game_speed(gamespeed:float):
 
 func reset_properties():
 	Engine.time_scale = 1
+	game_manager.bonus_dmg_off.emit()
