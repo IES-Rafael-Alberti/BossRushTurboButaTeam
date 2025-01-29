@@ -34,5 +34,6 @@ func search_for_player():
 
 func process_attack(dmg:float):
 	health-=dmg
+	print("dmg received, hp: ",health)
 	if health<=0:
 		queue_free()

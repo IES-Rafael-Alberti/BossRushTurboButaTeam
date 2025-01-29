@@ -15,7 +15,11 @@ func update(delta) -> void:
 		state_machine.transition_to("Idle")
 
 func exit() -> void:
-	generate_arrow(current_force)
+	if owner.shooting_arrows:
+		generate_arrow(current_force)
+	else:
+		generate_bullet()
+		
 
 func generate_arrow(force:Vector2) -> void:
 	var arrow:RigidBody2D = owner.arrow.instantiate()
@@ -25,6 +29,14 @@ func generate_arrow(force:Vector2) -> void:
 	arrow.apply_impulse(force)
 	owner.shoot_bar.value = 0
 	print(force) #FIXME print
+
+func generate_bullet() -> void:
+	var bullet:Area2D = owner.bullet.instantiate()
+	bullet.global_position = owner.attack_area.global_position
+	bullet.charge_progress += owner.shoot_bar.value #HACK mira qué gracioso, saco el valor de 0 a 100 de la value bar
+	bullet.direction = boolean_to_number(owner.facing)
+	add_child(bullet)
+	
 
 func boolean_to_number(value: bool) -> int:
 	return 1 if value else -1

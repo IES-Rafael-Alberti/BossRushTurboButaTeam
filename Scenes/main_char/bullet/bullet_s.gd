@@ -1,12 +1,18 @@
 extends Area2D
 
+@export var damage_multiplier = 1
+var charge_progress = 0
+@export var speed = 50
+var direction = 1
 
-# Called when the node enters the scene tree for the first time.
-func _ready():
-	pass # Replace with function body.
+func _ready() -> void:
+	if direction<0:
+		scale.x = -(scale.x)
+func _process(delta: float) -> void:
+	global_position.x += 100*direction
 
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	pass
-	#position.x += 2 * owner.direction
+func _on_body_entered(body: Node2D) -> void:
+	if body.has_method("process_attack"):
+		body.process_attack(round(damage_multiplier*charge_progress))
+		queue_free()

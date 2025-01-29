@@ -50,6 +50,7 @@ roll_interval = 5.0
 [node name="LionBoss" parent="Bosses" instance=ExtResource("4_qxxha")]
 position = Vector2(876, 572)
 scale = Vector2(6, 6)
+collision_mask = 33
 
 [node name="JokerBoss" parent="Bosses" instance=ExtResource("6_uowd6")]
 visible = false
