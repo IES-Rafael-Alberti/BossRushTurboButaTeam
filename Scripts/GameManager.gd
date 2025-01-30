@@ -1,6 +1,6 @@
 extends Node
 
-##region señales de la ruleta
+#region señales de la ruleta
 signal reset_roulette_effects
 signal swap_boss(is_lion:bool)
 signal tomatoes_on
@@ -12,6 +12,12 @@ signal slow_mode_off
 signal swap_shooting(arrow:bool)
 signal bonus_dmg_on
 signal bonus_dmg_off
+#endregion
+#region señales recibir daño
+signal lion_dmg(dmg:int)
+signal joker_dmg(dmg:int)
+signal mc_dmg(dmg:int)
+#endregion
 
 var is_boss_lion:bool
 @export var tomato_falling_speed = 3
