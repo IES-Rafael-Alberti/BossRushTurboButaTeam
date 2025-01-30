@@ -3,6 +3,7 @@ extends State
 func enter(_msg := {}) -> void:
 	attack()
 	state_machine.transition_to("Idle")
+	owner.sprite.play("espada")
 
 func attack():
 	var enemies_in_attack_area = owner.attack_area.get_overlapping_bodies()

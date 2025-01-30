@@ -4,7 +4,7 @@ var current_force:Vector2 = Vector2(0,0)
 func enter(_msg := {}) -> void:
 	current_force = owner.min_shoot_range
 	print("enter_shoot") #FIXME print
-
+	owner.sprite.play("tirachinas")
 
 func update(delta) -> void:
 	if Input.is_action_pressed("shoot"):

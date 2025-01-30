@@ -1,5 +1,8 @@
 extends State
 
+func enter(_msg := {}) -> void:
+	owner.sprite.play("andar")
+
 func physics_update(_delta:float) -> void:
 	var direction := Input.get_axis("ui_left", "ui_right")
 	if Input.is_action_just_pressed("ui_accept"):
