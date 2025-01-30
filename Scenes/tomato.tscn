@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://nhli4qkqp50a"]
+
+[ext_resource type="Script" path="res://Scenes/tomato.gd" id="1_1qqcb"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wvtj2"]
+
+[node name="tomato" type="Area2D"]
+collision_layer = 2
+collision_mask = 16
+script = ExtResource("1_1qqcb")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_wvtj2")
+debug_color = Color(0.941176, 0, 0, 0.419608)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

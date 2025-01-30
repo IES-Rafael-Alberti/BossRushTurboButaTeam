@@ -14,6 +14,7 @@ position = Vector2(1035, 548)
 scale = Vector2(10, 10)
 
 [node name="MainChar" parent="." instance=ExtResource("2_8fhhx")]
+unique_name_in_owner = true
 position = Vector2(83, 580)
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]

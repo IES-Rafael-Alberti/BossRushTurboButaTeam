@@ -9,7 +9,7 @@ func _ready() -> void:
 	#lion_boss.process_mode = PROCESS_MODE_DISABLED 
 	joker_boss.process_mode = PROCESS_MODE_DISABLED 
 	
-func swap_boss(is_lion:bool)-> void :
+func swap_boss(is_lion:bool)-> void : #TODO cuando muera uno que se ponga el otro
 	print("called_swap_boss, is_lion:",is_lion,"is_boss_lion",game_manager.is_boss_lion)
 	if is_lion == game_manager.is_boss_lion:
 		print("same boss called")

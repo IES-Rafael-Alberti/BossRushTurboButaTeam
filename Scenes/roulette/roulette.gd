@@ -19,7 +19,7 @@ func _ready():
 	roll_interval_timer.timeout.connect(spin)
 
 func spin():
-	result = randi_range(4,5)
+	result = randi_range(0,6)
 	print("new_result")
 	animation_player.play("rotation")
 	stop_at = (result*45)+randi_range(0,45)
@@ -29,8 +29,6 @@ func spin():
 
 func _process(delta):
 	if stopping_wheel:
-		#print("rot:", wheel_sprite.rotation,"stop_at:",stop_at)
-		#print(delta) #FIXME 2 prints
 		wheel_sprite.rotation = lerpf(wheel_sprite.rotation,stop_at, 360/60*delta) #TODO transición seamless a cuando está parando
 		if roundf(wheel_sprite.rotation)==stop_at:
 			print("stopped stopping_wheel")
@@ -67,4 +65,4 @@ func process_result():
 		6:
 			print("6:Tomates")
 			last_action.set_text("Tomatoes")
-			#TODO
+			game_manager.tomatoes_on.emit()
