@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://lonso5hph87e"
-path="res://.godot/imported/mc-removebg-preview.png-46dccd6159a08b590ffcd0e66f377723.ctex"
+uid="uid://rt8lkijkgk8w"
+path="res://.godot/imported/animacion_danoo_player.png-e0891335882cdc6376681bdccbd92a39.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/mc-removebg-preview.png"
-dest_files=["res://.godot/imported/mc-removebg-preview.png-46dccd6159a08b590ffcd0e66f377723.ctex"]
+source_file="res://Assets/animacion_danoo_player.png"
+dest_files=["res://.godot/imported/animacion_danoo_player.png-e0891335882cdc6376681bdccbd92a39.ctex"]
 
 [params]
 

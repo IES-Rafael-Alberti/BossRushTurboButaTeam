@@ -15,6 +15,7 @@ var awaited_frames = 0
 @onready var attack_area = $AttackArea
 @onready var shoot_bar: TextureProgressBar = $ShootBar
 @onready var state_machine: StateMachine = $StateMachine
+@onready var animation_player = $AnimationPlayer
 
 var facing = 1 #TODO
 

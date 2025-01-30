@@ -27,6 +27,7 @@ func attack_player():
 		for body in bodies:
 			#Si este cuerpo tiene el método "process_attack" (esto hace que el juego no pete pidiendo un método a un cuerpo que no lo tiene)
 			if body.has_method("process_attack"):
+				body.animation_player.play("dano")
 				#le atacamos, con el daño del owner de este estado y le empujamos.
 				body.process_attack(owner.attack_damage)
 				var push_direction = (owner.direction + Vector2(0,-1)).normalized()
