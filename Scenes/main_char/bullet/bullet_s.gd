@@ -13,6 +13,6 @@ func _process(delta: float) -> void:
 
 
 func _on_body_entered(body: Node2D) -> void:
-	if body.has_method("process_attack"):
-		body.process_attack(round(damage_multiplier*charge_progress))
+	if body.get_parent().has_method("process_attack"):
+		body.get_parent().process_attack(round(damage_multiplier*charge_progress))
 		queue_free()

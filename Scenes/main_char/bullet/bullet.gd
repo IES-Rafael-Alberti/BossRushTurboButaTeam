@@ -10,9 +10,10 @@ func _ready():
 func _physics_process(delta):
 	pass
 
-func _on_body_entered(body):
-	if body.has_method("process_attack"):
-		body.process_attack(damage)
+func area_entered(area):
+	print("area_entered")
+	if area.get_parent().has_method("process_attack"):
+		area.get_parent().process_attack(damage)
 		queue_free()
 
 func activate_bonus_damage():
