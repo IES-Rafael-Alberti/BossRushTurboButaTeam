@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://dijr4i4ga56rg"]
+[gd_scene load_steps=33 format=3 uid="uid://dijr4i4ga56rg"]
 
 [ext_resource type="Script" path="res://Scenes/lion_boss/lion_boss.gd" id="1_ff2op"]
 [ext_resource type="Script" path="res://Resources/StateMachine.gd" id="2_gw8tt"]
@@ -6,13 +6,178 @@
 [ext_resource type="Script" path="res://Scenes/lion_boss/state_machine/attack.gd" id="4_4tf06"]
 [ext_resource type="Script" path="res://Scenes/lion_boss/state_machine/walk.gd" id="5_v1phe"]
 [ext_resource type="Script" path="res://Scenes/lion_boss/state_machine/jump.gd" id="6_k2hpp"]
-[ext_resource type="Texture2D" uid="uid://cgqv61exo8ree" path="res://Assets/leon Sprite.png" id="7_jqslp"]
+[ext_resource type="Texture2D" uid="uid://cvd18isg28dhr" path="res://Assets/lion/andar_leon_64.png" id="7_xwoyf"]
+[ext_resource type="Texture2D" uid="uid://jemenvevsvwc" path="res://Assets/lion/leon_ataque_64.png" id="8_ganub"]
+[ext_resource type="Texture2D" uid="uid://cm8g6aodil0bq" path="res://Assets/lion/saltar_leon_64.png" id="9_qy27t"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gbrsr"]
 size = Vector2(19, 16)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_q7o36"]
 size = Vector2(16, 19)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yob8t"]
+atlas = ExtResource("7_xwoyf")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_56qca"]
+atlas = ExtResource("7_xwoyf")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e2hpb"]
+atlas = ExtResource("7_xwoyf")
+region = Rect2(128, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fvdea"]
+atlas = ExtResource("7_xwoyf")
+region = Rect2(192, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7vcdx"]
+atlas = ExtResource("8_ganub")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0yymu"]
+atlas = ExtResource("8_ganub")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8afsg"]
+atlas = ExtResource("8_ganub")
+region = Rect2(128, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4muwp"]
+atlas = ExtResource("8_ganub")
+region = Rect2(192, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yqq7g"]
+atlas = ExtResource("8_ganub")
+region = Rect2(256, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4ttd2"]
+atlas = ExtResource("8_ganub")
+region = Rect2(320, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m1pb3"]
+atlas = ExtResource("8_ganub")
+region = Rect2(384, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dlavx"]
+atlas = ExtResource("9_qy27t")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1kpfh"]
+atlas = ExtResource("9_qy27t")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_u4ci0"]
+atlas = ExtResource("9_qy27t")
+region = Rect2(128, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sxibg"]
+atlas = ExtResource("9_qy27t")
+region = Rect2(192, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_o6ljs"]
+atlas = ExtResource("9_qy27t")
+region = Rect2(256, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_enly0"]
+atlas = ExtResource("9_qy27t")
+region = Rect2(320, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ehbrs"]
+atlas = ExtResource("9_qy27t")
+region = Rect2(384, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ykpgh"]
+atlas = ExtResource("9_qy27t")
+region = Rect2(448, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1qovo"]
+atlas = ExtResource("9_qy27t")
+region = Rect2(0, 64, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_dibet"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yob8t")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_56qca")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_e2hpb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fvdea")
+}],
+"loop": true,
+"name": &"andar",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7vcdx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0yymu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8afsg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4muwp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yqq7g")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4ttd2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_m1pb3")
+}],
+"loop": false,
+"name": &"ataque",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dlavx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1kpfh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_u4ci0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sxibg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_o6ljs")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_enly0")
+}],
+"loop": false,
+"name": &"jump",
+"speed": 12.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ehbrs")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ykpgh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1qovo")
+}],
+"loop": false,
+"name": &"land",
+"speed": 8.0
+}]
 
 [node name="LionBoss" type="CharacterBody2D"]
 collision_layer = 2
@@ -55,10 +220,13 @@ debug_color = Color(0.85809, 0.32529, 0.435231, 0.42)
 [node name="AttackCooldown" type="Timer" parent="."]
 unique_name_in_owner = true
 
-[node name="LionSprite" type="Sprite2D" parent="."]
-position = Vector2(0, -0.5)
+[node name="LionSprite" type="AnimatedSprite2D" parent="."]
+position = Vector2(-8, -11)
 scale = Vector2(0.625, 0.625)
-texture = ExtResource("7_jqslp")
+sprite_frames = SubResource("SpriteFrames_dibet")
+animation = &"land"
+frame = 2
+frame_progress = 1.0
 
 [connection signal="body_entered" from="AttackArea" to="StateMachine/Idle" method="_on_attack_area_body_entered"]
 [connection signal="timeout" from="AttackCooldown" to="StateMachine/Attack" method="_on_attack_cooldown_timeout"]

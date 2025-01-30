@@ -7,6 +7,7 @@ extends State
 var is_jumping = false
 
 func enter(_msg := {}) -> void:
+	owner.sprite.play("jump")
 	jump()
 
 func jump():
@@ -39,6 +40,6 @@ func bezier(t): #ORO
 	var q1 = P1_middle.lerp(P2_player_position,t)
 	var r = q0.lerp(q1,t)
 	return r
-
+	
 func exit() -> void:
-	pass
+	owner.sprite.play("land")

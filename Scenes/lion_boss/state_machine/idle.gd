@@ -3,7 +3,7 @@ extends State
 @onready var attack_area = %AttackArea
 
 func enter(_msg := {}) -> void:
-	pass
+	owner.sprite.stop()
 
 func update(_delta:float) -> void:
 	if owner.global_position.distance_to(owner.player.global_position) < owner.walk_distance || owner.global_position.distance_to(owner.player.global_position) > owner.jump_distance:
