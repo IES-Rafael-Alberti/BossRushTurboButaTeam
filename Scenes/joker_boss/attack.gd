@@ -3,11 +3,11 @@ extends State
 @onready var attack_timer = %Attack_Timer
 var times_attacked = 0
 
-func _ready():
+func _ready() -> void:
 	attack_timer.timeout.connect(generate_projectile)
 
-
 func enter(_msg := {}):
+	owner.sprite.play("ataque")
 	times_attacked = 0
 	attack_timer.wait_time = owner.attack_speed
 	#print(attack_timer.wait_time) #FIXME print

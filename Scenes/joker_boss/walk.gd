@@ -18,6 +18,7 @@ func physics_update(_delta:float) -> void:
 
 func enter(_msg := {}) -> void:
 	owner.velocity = Vector2(0,0)
+	owner.sprite.play("walking")
 
 func exit() -> void:
 	pass

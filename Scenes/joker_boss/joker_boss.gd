@@ -1,4 +1,5 @@
 extends Boss
+@onready var sprite: AnimatedSprite2D = $sprite
 
 @export var safe_distance:float
 @export_category("Shooting")
