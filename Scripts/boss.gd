@@ -5,7 +5,7 @@ extends CharacterBody2D
 @export var speed = 300.0
 #@export var jump_force = -3000.0
 @export var attack_damage = 50
-var player: Node
+var player: CharacterBody2D
 var direction
 var is_flipped = false
 
@@ -30,9 +30,14 @@ func _physics_process(delta):
 			is_flipped = false
 
 func search_for_player():
-	player = get_node("../MainChar")
+	player = get_node("%MainChar")
 
 func process_attack(dmg:float):
+	if name=="LionBoss":
+		game_manager.lion_dmg.emit(dmg)
+	else:
+		game_manager.joker_dmg.emit(dmg)
 	health-=dmg
+	print("dmg received, hp: ",health)
 	if health<=0:
 		queue_free()

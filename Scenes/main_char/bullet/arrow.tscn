@@ -11,12 +11,12 @@ size = Vector2(20, 6)
 [node name="Arrow" type="RigidBody2D"]
 position = Vector2(541, 237)
 collision_layer = 0
-collision_mask = 2
+collision_mask = 8
 script = ExtResource("1_fkcku")
 
 [node name="Area2D" type="Area2D" parent="."]
-collision_layer = 32
-collision_mask = 2
+collision_layer = 0
+collision_mask = 8
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 shape = SubResource("RectangleShape2D_kfkd5")
@@ -32,4 +32,4 @@ rotation = 1.5708
 scale = Vector2(0.240398, 0.147211)
 texture = ExtResource("2_tdyib")
 
-[connection signal="body_entered" from="Area2D" to="." method="_on_body_entered"]
+[connection signal="area_entered" from="Area2D" to="." method="area_entered"]
