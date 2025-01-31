@@ -6,10 +6,10 @@ func enter(_msg := {}) -> void:
 	owner.sprite.play("espada")
 
 func attack():
-	var enemies_in_attack_area = owner.attack_area.get_overlapping_bodies()
+	var enemies_in_attack_area = owner.attack_area.get_overlapping_areas()
 	if enemies_in_attack_area.size()>0:
 		for enemy in enemies_in_attack_area:
-			if enemy.has_method("process_attack"):
-				enemy.process_attack(owner.attack_damage)
+			if enemy.get_parent().has_method("process_attack"):
+				enemy.get_parent().process_attack(owner.attack_damage)
 	else:
 		print("failed attack") #FIXME print

@@ -2,7 +2,9 @@ extends State
 
 func enter(_msg:= {}):
 	owner.velocity = Vector2(0,0)
-	owner.sprite.play("idle")
+	if owner.sprite.animation=="espada" or owner.sprite.animation=="recibir_danyo":
+		await owner.sprite.animation_finished
+		owner.sprite.play("idle")
 
 func update(delta:float) -> void:
 	var direction := Input.get_axis("ui_left", "ui_right")
