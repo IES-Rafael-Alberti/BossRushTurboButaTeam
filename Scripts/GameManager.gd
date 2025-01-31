@@ -41,5 +41,5 @@ func win_condition():
 	if one_boss_dead==false:
 		one_boss_dead=true
 	else:
-		get_tree().change_scene_to_file("res://Scenes/Menu.tscn") #TODO cambiar a pantalla de victoria
+		get_tree().change_scene_to_file("res://Scenes/credits.tscn") #TODO cambiar a pantalla de victoria
 	

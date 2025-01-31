@@ -33,7 +33,6 @@ func _ready():
 	game_manager.bonus_dmg_on.connect(activate_bonus_damage)
 	game_manager.bonus_dmg_off.connect(reset_damage)
 	game_manager.swap_shooting.connect(swap_bullets)
-
 func _physics_process(delta):
 	if not is_on_floor():
 		velocity += get_gravity() * delta
@@ -54,9 +53,9 @@ func process_attack(dmg) -> void:
 func recieve_attack(dmg) -> void:
 	sprite.play("recibir_danyo")
 	game_manager.mc_dmg.emit(dmg)
-	print("damage recieved") #FIXME print
+	#print("damage recieved") #FIXME print
 	health-=dmg
-	print(health)
+	#print(health)
 	if health<=0:
 		die()
 

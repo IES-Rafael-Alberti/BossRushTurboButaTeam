@@ -3,7 +3,7 @@ var current_force:Vector2 = Vector2(0,0)
 
 func enter(_msg := {}) -> void:
 	current_force = owner.min_shoot_range
-	print("enter_shoot") #FIXME print
+	#print("enter_shoot") #FIXME print
 	owner.sprite.play("tirachinas")
 
 func update(delta) -> void:
@@ -28,7 +28,7 @@ func generate_arrow(force:Vector2) -> void:
 	force.x*=boolean_to_number(owner.facing)
 	arrow.apply_impulse(force)
 	owner.shoot_bar.value = 0
-	print(force) #FIXME print
+	#print(force) #FIXME print
 
 func generate_bullet() -> void:
 	var bullet:Area2D = owner.bullet.instantiate()
