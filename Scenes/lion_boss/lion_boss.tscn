@@ -1,4 +1,4 @@
-[gd_scene load_steps=33 format=3 uid="uid://dijr4i4ga56rg"]
+[gd_scene load_steps=37 format=3 uid="uid://dijr4i4ga56rg"]
 
 [ext_resource type="Script" path="res://Scenes/lion_boss/lion_boss.gd" id="1_ff2op"]
 [ext_resource type="Script" path="res://Resources/StateMachine.gd" id="2_gw8tt"]
@@ -9,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://cvd18isg28dhr" path="res://Assets/lion/andar_leon_64.png" id="7_xwoyf"]
 [ext_resource type="Texture2D" uid="uid://jemenvevsvwc" path="res://Assets/lion/leon_ataque_64.png" id="8_ganub"]
 [ext_resource type="Texture2D" uid="uid://cm8g6aodil0bq" path="res://Assets/lion/saltar_leon_64.png" id="9_qy27t"]
+[ext_resource type="Texture2D" uid="uid://gy23abu7vp43" path="res://Assets/idle leon.png" id="9_wfb83"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gbrsr"]
 size = Vector2(19, 3)
@@ -62,6 +63,14 @@ region = Rect2(320, 0, 64, 64)
 [sub_resource type="AtlasTexture" id="AtlasTexture_m1pb3"]
 atlas = ExtResource("8_ganub")
 region = Rect2(384, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0tixt"]
+atlas = ExtResource("9_wfb83")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v368r"]
+atlas = ExtResource("9_wfb83")
+region = Rect2(64, 0, 64, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_dlavx"]
 atlas = ExtResource("9_qy27t")
@@ -143,6 +152,17 @@ animations = [{
 "loop": false,
 "name": &"ataque",
 "speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0tixt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_v368r")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 3.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -236,9 +256,8 @@ unique_name_in_owner = true
 position = Vector2(-8, -11)
 scale = Vector2(0.625, 0.625)
 sprite_frames = SubResource("SpriteFrames_dibet")
-animation = &"land"
-frame = 2
-frame_progress = 1.0
+animation = &"idle"
+frame_progress = 0.87155
 
 [connection signal="body_entered" from="AttackArea" to="StateMachine/Idle" method="_on_attack_area_body_entered"]
 [connection signal="timeout" from="AttackCooldown" to="StateMachine/Attack" method="_on_attack_cooldown_timeout"]

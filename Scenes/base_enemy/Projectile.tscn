@@ -1,17 +1,23 @@
-[gd_scene load_steps=3 format=3 uid="uid://badevognmcrjg"]
+[gd_scene load_steps=4 format=3 uid="uid://badevognmcrjg"]
 
 [ext_resource type="Script" path="res://Scenes/base_enemy/projectile.gd" id="1_qrrlj"]
+[ext_resource type="Texture2D" uid="uid://cn5ot4gjctnci" path="res://Assets/hipno.png" id="2_vwp2q"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1l0ee"]
-size = Vector2(20, 10)
+size = Vector2(12, 11)
 
 [node name="Projectile" type="Area2D"]
+scale = Vector2(0.5, 0.5)
 collision_layer = 2
 collision_mask = 16
 script = ExtResource("1_qrrlj")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -0.5)
 shape = SubResource("RectangleShape2D_1l0ee")
 debug_color = Color(0.390304, 0.611084, 0, 0.42)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_vwp2q")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

@@ -1,8 +1,11 @@
 extends Control
 
+@onready var retry_button = $RetryButton
+@onready var quit_button = $QuitButton
 
 
-
+func _ready():
+	retry_button.grab_focus()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):

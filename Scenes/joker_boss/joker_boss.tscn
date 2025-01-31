@@ -147,7 +147,7 @@ animations = [{
 }]
 
 [node name="JokerBoss" type="CharacterBody2D"]
-scale = Vector2(6, 4)
+scale = Vector2(6, 6)
 collision_layer = 2
 collision_mask = 17
 script = ExtResource("1_no2kk")
@@ -195,6 +195,6 @@ unique_name_in_owner = true
 
 [node name="sprite" type="AnimatedSprite2D" parent="."]
 position = Vector2(-7.16667, -0.25)
-scale = Vector2(0.411458, 0.5979)
+scale = Vector2(0.6, 0.6)
 sprite_frames = SubResource("SpriteFrames_skvna")
 animation = &"ataque"

@@ -18,7 +18,7 @@ signal lion_dmg(dmg:int)
 signal joker_dmg(dmg:int)
 signal mc_dmg(dmg:int)
 #endregion
-
+signal player_died
 var is_boss_lion:bool
 @export var tomato_falling_speed = 3
 @export var tomato_damage = 20

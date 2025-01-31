@@ -15,6 +15,7 @@ attack_speed = 2.0
 jump_distance = 700.0
 
 [node name="MainChar" parent="." instance=ExtResource("2_m7ppk")]
+unique_name_in_owner = true
 position = Vector2(68, 570)
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]

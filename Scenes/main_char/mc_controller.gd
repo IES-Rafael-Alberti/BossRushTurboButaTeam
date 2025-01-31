@@ -57,11 +57,11 @@ func recieve_attack(dmg) -> void:
 	health-=dmg
 	print(health)
 	if health<=0:
-    die()
+		die()
 
 func die():
 	process_mode = PROCESS_MODE_DISABLED
-	
+	game_manager.player_died.emit()
 func activate_bonus_damage():
 	attack_damage+= roulette_dmg_bonus
 
