@@ -1,5 +1,6 @@
 extends Boss
 
+@onready var sprite: AnimatedSprite2D = $LionSprite
 #propiedades del boss, exportadas para editarlas en runtime y más cómodamente
 @export_category("Lion Abilities")
 @export var jump_distance = 1000.0

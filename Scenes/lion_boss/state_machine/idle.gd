@@ -3,8 +3,8 @@ extends State
 @onready var attack_area = %AttackArea
 
 func enter(_msg := {}) -> void:
+	owner.sprite.stop()
 	#owner.timerWalk = 0
-	pass
 
 func update(_delta:float) -> void:
 	#owner.timerWalk += _delta

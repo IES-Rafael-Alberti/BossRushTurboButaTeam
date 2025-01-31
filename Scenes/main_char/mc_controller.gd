@@ -1,5 +1,6 @@
 extends CharacterBody2D
 
+
 @export_category("Stats")
 @export var SPEED = 600.0
 @export var JUMP_VELOCITY = -1200.0
@@ -22,6 +23,7 @@ extends CharacterBody2D
 @onready var attack_area = $AttackArea
 @onready var shoot_bar: TextureProgressBar = $ShootBar
 @onready var state_machine: StateMachine = $StateMachine
+@onready var sprite: AnimatedSprite2D = $sprite
 
 var awaited_frames = 0
 var facing:bool = true #true izqader
@@ -55,8 +57,11 @@ func recieve_attack(dmg) -> void:
 	health-=dmg
 	print(health)
 	if health<=0:
-		queue_free()
+    die()
 
+func die():
+	process_mode = PROCESS_MODE_DISABLED
+	
 func activate_bonus_damage():
 	attack_damage+= roulette_dmg_bonus
 
