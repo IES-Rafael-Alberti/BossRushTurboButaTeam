@@ -61,7 +61,7 @@ func recieve_attack(dmg) -> void:
 
 func die():
 	process_mode = PROCESS_MODE_DISABLED
-	
+	game_manager.player_died.emit()
 func activate_bonus_damage():
 	attack_damage+= roulette_dmg_bonus
 
