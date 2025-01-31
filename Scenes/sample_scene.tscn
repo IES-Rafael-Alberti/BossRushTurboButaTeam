@@ -17,6 +17,7 @@ shape = SubResource("WorldBoundaryShape2D_08vm1")
 [node name="MainChar" parent="." instance=ExtResource("1_d3hhv")]
 position = Vector2(92, 577)
 attack_damage = 1000
+shooting_arrows = false
 force_by_frame = Vector2(20, -30)
 
 [node name="Enemy" parent="." instance=ExtResource("2_tyk7a")]

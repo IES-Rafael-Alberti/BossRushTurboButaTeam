@@ -30,9 +30,14 @@ func _physics_process(delta):
 			is_flipped = false
 
 func search_for_player():
-	player = get_node("../MainChar")
+	player = get_node("%MainChar")
 
 func process_attack(dmg:float):
+	if name=="LionBoss":
+		game_manager.lion_dmg.emit(dmg)
+	else:
+		game_manager.joker_dmg.emit(dmg)
 	health-=dmg
+	print("dmg received, hp: ",health)
 	if health<=0:
 		queue_free()

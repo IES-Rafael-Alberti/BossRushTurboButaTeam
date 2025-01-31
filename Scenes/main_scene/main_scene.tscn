@@ -1,0 +1,75 @@
+[gd_scene load_steps=9 format=3 uid="uid://ddgd60i7pfvtq"]
+
+[ext_resource type="Script" path="res://Scenes/main_scene/main_scene.gd" id="1_em213"]
+[ext_resource type="PackedScene" uid="uid://f5mvlpww81f4" path="res://Scenes/main_char/main_char.tscn" id="1_yoicf"]
+[ext_resource type="PackedScene" uid="uid://b8av3f7mqwkmy" path="res://Scenes/roulette/roulette.tscn" id="2_lbayn"]
+[ext_resource type="PackedScene" uid="uid://dijr4i4ga56rg" path="res://Scenes/lion_boss/lion_boss.tscn" id="4_qxxha"]
+[ext_resource type="PackedScene" uid="uid://baehtdpqmyrb" path="res://Scenes/joker_boss/joker_boss.tscn" id="6_uowd6"]
+[ext_resource type="Script" path="res://Scripts/tomato_spawner.gd" id="6_xcnes"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_fppy2"]
+distance = -650.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_o3470"]
+size = Vector2(1165, 20)
+
+[node name="MainScene" type="Node2D"]
+script = ExtResource("1_em213")
+
+[node name="MainChar" parent="." instance=ExtResource("1_yoicf")]
+unique_name_in_owner = true
+position = Vector2(52, 568)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+collision_mask = 18
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+shape = SubResource("WorldBoundaryShape2D_fppy2")
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="."]
+position = Vector2(14.58, 0)
+collision_mask = 18
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2"]
+position = Vector2(630, 0)
+rotation = 1.5708
+shape = SubResource("WorldBoundaryShape2D_fppy2")
+
+[node name="StaticBody2D3" type="StaticBody2D" parent="."]
+position = Vector2(1152, 0)
+rotation = 3.14159
+collision_mask = 18
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D3"]
+position = Vector2(654, -5.71745e-05)
+rotation = 1.5708
+shape = SubResource("WorldBoundaryShape2D_fppy2")
+
+[node name="Roulette" parent="." instance=ExtResource("2_lbayn")]
+position = Vector2(1018, 96)
+roll_interval = 5.0
+
+[node name="Bosses" type="Node" parent="."]
+
+[node name="LionBoss" parent="Bosses" instance=ExtResource("4_qxxha")]
+position = Vector2(876, 572)
+scale = Vector2(6, 6)
+collision_mask = 33
+
+[node name="JokerBoss" parent="Bosses" instance=ExtResource("6_uowd6")]
+visible = false
+position = Vector2(872, 569)
+scale = Vector2(6, 6)
+
+[node name="tomato_spawner" type="Area2D" parent="."]
+script = ExtResource("6_xcnes")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="tomato_spawner"]
+position = Vector2(572.5, 0)
+shape = SubResource("RectangleShape2D_o3470")
+debug_color = Color(1, 0, 0, 0.419608)
+
+[node name="tomato_spawner_timer" type="Timer" parent="tomato_spawner"]
+autostart = true
+
+[connection signal="timeout" from="tomato_spawner/tomato_spawner_timer" to="tomato_spawner" method="_on_tomato_spawner_timer_timeout"]
