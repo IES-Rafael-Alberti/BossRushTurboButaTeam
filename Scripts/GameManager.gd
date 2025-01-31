@@ -19,6 +19,9 @@ signal joker_dmg(dmg:int)
 signal mc_dmg(dmg:int)
 #endregion
 signal player_died
+
+signal boss_dead
+var one_boss_dead = false
 var is_boss_lion:bool
 @export var tomato_falling_speed = 3
 @export var tomato_damage = 20
@@ -30,3 +33,13 @@ func reset_properties():
 	bonus_dmg_off.emit()
 	swap_shooting.emit(true)
 	tomatoes_off.emit()
+
+func _ready():
+	boss_dead.connect(win_condition)
+func win_condition():
+	print("=======================trying win", one_boss_dead)
+	if one_boss_dead==false:
+		one_boss_dead=true
+	else:
+		get_tree().change_scene_to_file("res://Scenes/Menu.tscn") #TODO cambiar a pantalla de victoria
+	

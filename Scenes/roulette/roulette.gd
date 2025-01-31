@@ -4,13 +4,12 @@ extends Node2D
 @onready var wheel_sprite = $Sprite2D
 @onready var animation_player = $AnimationPlayer
 @onready var last_action = $last_action
-
 @export var roll_interval:float = 30
 @export var spin_duration:float = 3
 var stop_at = 0
 var stopping_wheel = false
 var result = 0
-
+var one_boss_dead = false
 func _ready():
 	game_manager.is_boss_lion = true
 	#result = randi_range(0,1)
@@ -39,10 +38,16 @@ func process_result():
 	game_manager.reset_properties()
 	match result:
 		0:
+			if game_manager.one_boss_dead:
+				last_action.set_text("Nothing")
+				return
 			print("0:showing_lion")
 			last_action.set_text("Lion")
 			game_manager.swap_boss.emit(true)
 		1:
+			if game_manager.one_boss_dead:
+				last_action.set_text("Nothing")
+				return
 			print("1:showing_joker")
 			last_action.set_text("Joker")
 			game_manager.swap_boss.emit(false)

@@ -257,7 +257,7 @@ position = Vector2(-8, -11)
 scale = Vector2(0.625, 0.625)
 sprite_frames = SubResource("SpriteFrames_dibet")
 animation = &"idle"
-frame_progress = 0.87155
+frame_progress = 0.893927
 
 [connection signal="body_entered" from="AttackArea" to="StateMachine/Idle" method="_on_attack_area_body_entered"]
 [connection signal="timeout" from="AttackCooldown" to="StateMachine/Attack" method="_on_attack_cooldown_timeout"]

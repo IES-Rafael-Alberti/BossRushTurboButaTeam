@@ -52,6 +52,7 @@ func process_attack(dmg) -> void:
 	recieve_attack(dmg)
 	
 func recieve_attack(dmg) -> void:
+	sprite.play("recibir_danyo")
 	game_manager.mc_dmg.emit(dmg)
 	print("damage recieved") #FIXME print
 	health-=dmg
