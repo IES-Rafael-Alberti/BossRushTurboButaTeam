@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://baehtdpqmyrb"]
+[gd_scene load_steps=30 format=3 uid="uid://baehtdpqmyrb"]
 
 [ext_resource type="Script" path="res://Scenes/joker_boss/joker_boss.gd" id="1_no2kk"]
 [ext_resource type="Script" path="res://Resources/StateMachine.gd" id="2_ow3dh"]
@@ -7,12 +7,144 @@
 [ext_resource type="Script" path="res://Scenes/joker_boss/walk.gd" id="5_xkgwd"]
 [ext_resource type="Script" path="res://Scenes/joker_boss/jump.gd" id="6_r06w1"]
 [ext_resource type="Script" path="res://Scenes/joker_boss/air.gd" id="7_pkaer"]
+[ext_resource type="Texture2D" uid="uid://b0suy8ou8nb0j" path="res://Assets/joker/walking.png" id="8_32vmx"]
+[ext_resource type="Texture2D" uid="uid://bs5rsmi6yjmhv" path="res://Assets/joker/ataque.png" id="8_es023"]
+[ext_resource type="Texture2D" uid="uid://dryjfgofadwoq" path="res://Assets/joker/idle.png" id="9_4dhyy"]
+[ext_resource type="Texture2D" uid="uid://dj7d3dkn1tkq1" path="res://Assets/joker/salto.png" id="10_kamf3"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lkv3y"]
 size = Vector2(19, 3)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_67xsd"]
 size = Vector2(0.833332, 20)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xsr33"]
+atlas = ExtResource("8_es023")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h81sp"]
+atlas = ExtResource("8_es023")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ih6mh"]
+atlas = ExtResource("8_es023")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c5de2"]
+atlas = ExtResource("8_es023")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_clt5q"]
+atlas = ExtResource("9_4dhyy")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h6oh4"]
+atlas = ExtResource("9_4dhyy")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tt8ey"]
+atlas = ExtResource("9_4dhyy")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mj1h5"]
+atlas = ExtResource("10_kamf3")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7m5hh"]
+atlas = ExtResource("10_kamf3")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cafac"]
+atlas = ExtResource("10_kamf3")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2cs7m"]
+atlas = ExtResource("10_kamf3")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_q1fkn"]
+atlas = ExtResource("8_32vmx")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mdcbk"]
+atlas = ExtResource("8_32vmx")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4fed1"]
+atlas = ExtResource("8_32vmx")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_04smy"]
+atlas = ExtResource("8_32vmx")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_skvna"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xsr33")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_h81sp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ih6mh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_c5de2")
+}],
+"loop": true,
+"name": &"ataque",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_clt5q")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_h6oh4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tt8ey")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mj1h5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7m5hh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cafac")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2cs7m")
+}],
+"loop": false,
+"name": &"salto",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_q1fkn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mdcbk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4fed1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_04smy")
+}],
+"loop": true,
+"name": &"walking",
+"speed": 5.0
+}]
 
 [node name="JokerBoss" type="CharacterBody2D"]
 scale = Vector2(6, 4)
@@ -60,3 +192,9 @@ shape = SubResource("RectangleShape2D_67xsd")
 
 [node name="Attack_Timer" type="Timer" parent="."]
 unique_name_in_owner = true
+
+[node name="sprite" type="AnimatedSprite2D" parent="."]
+position = Vector2(-7.16667, -0.25)
+scale = Vector2(0.411458, 0.5979)
+sprite_frames = SubResource("SpriteFrames_skvna")
+animation = &"ataque"
