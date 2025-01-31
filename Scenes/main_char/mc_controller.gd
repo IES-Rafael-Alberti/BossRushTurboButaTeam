@@ -57,7 +57,7 @@ func recieve_attack(dmg) -> void:
 	health-=dmg
 	print(health)
 	if health<=0:
-    die()
+		die()
 
 func die():
 	process_mode = PROCESS_MODE_DISABLED

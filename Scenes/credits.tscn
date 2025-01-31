@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://cmc6utc5d5tdj"]
 
 [ext_resource type="Script" path="res://Scenes/credits.gd" id="1_xma6h"]
-[ext_resource type="Texture2D" uid="uid://bfgb1qh8jr7d1" path="res://Assets/Hombres Calvos.jpg" id="2_wifu2"]
+[ext_resource type="Texture2D" uid="uid://b8lfi73p0brst" path="res://Assets/fondoMenu.png" id="2_cqu43"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_3md4k"]
 font_size = 62
@@ -26,9 +26,30 @@ script = ExtResource("1_xma6h")
 metadata/_edit_lock_ = true
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(573, 380.935)
-scale = Vector2(1.55978, 1.09975)
-texture = ExtResource("2_wifu2")
+position = Vector2(572.5, 324.5)
+scale = Vector2(2.40625, 2.4037)
+texture = ExtResource("2_cqu43")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -29.0
+offset_top = -8.0
+offset_right = 9.0
+offset_bottom = 14.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.0901961, 0.0313726, 0.129412, 0.611765)
+
+[node name="ColorRect2" type="ColorRect" parent="."]
+layout_mode = 0
+offset_left = 206.0
+offset_top = 127.0
+offset_right = 938.0
+offset_bottom = 513.0
+color = Color(0.054902, 0.0470588, 0.152941, 0.713726)
 
 [node name="BackButton" type="Button" parent="."]
 layout_mode = 0
@@ -64,12 +85,12 @@ grow_vertical = 2
 theme = SubResource("Theme_7py6l")
 bbcode_enabled = true
 text = "[center]
-[font_size=40] A game by TurboButa Team [/font_size]
+[font_size=48] A game by TurboButa Team [/font_size]
 
-[font_size=40] Made With Godot Engine [/font_size]
+[font_size=48] Made With Godot Engine [/font_size]
 
 [font_size=45] Turbobuta team: [/font_size]
-
+[font_size=24] 
 Sergio Hiniesta Mendoza - Designer, Artist
 
 Alicia Gómez Revilla- UI Programmer
@@ -78,13 +99,9 @@ Eduardo Daza Villanueva- Production, Artist
 
 Javi Jiménez-Alfaro Hacha- Main Programmer
 
-Jerai Muñoz Palacios - Programmer
+Yeray Muñoz Palacios - Programmer
 
 [font_size=32] Special Thanks to: [/font_size]
-
-Francesco, for being hooked enough to find every bug
-
-Mario, for his support and interest in the game
 
 Javi, for his critical analyzing and comedic relief
 
@@ -95,6 +112,7 @@ David, for his planning and organizing support
 Godot Community, for creating such an amazing tool
 
 Special thanks to Mr. Worldwide Pitbull for his amazing support through his songs
+[/font_size]
 
 
 
