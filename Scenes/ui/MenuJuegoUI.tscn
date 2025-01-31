@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://dbge7ppi0vsv4"]
+[gd_scene load_steps=11 format=3 uid="uid://dbge7ppi0vsv4"]
 
 [ext_resource type="Script" path="res://Scenes/ui/menu_juego_ui.gd" id="1_72fcx"]
 [ext_resource type="Texture2D" uid="uid://ca1i03tmnfov1" path="res://Assets/Hud/player/lifeBar.png" id="2_b2x4i"]
@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://ql53pq22hwb8" path="res://Assets/Hud/caras/ninio.png" id="6_sci8m"]
 [ext_resource type="Texture2D" uid="uid://bdsefw3680dhe" path="res://Assets/Hud/caras/Untilted - 3.png" id="7_gbwim"]
 [ext_resource type="Texture2D" uid="uid://cfce1igxqm0sm" path="res://Assets/Hud/circlebar/circle bar under.png" id="8_aspqg"]
+[ext_resource type="Texture2D" uid="uid://bghqb2y2cwnj7" path="res://Assets/Hud/caras/Lion.png" id="8_p1ub6"]
 [ext_resource type="Texture2D" uid="uid://c3uvviad5vyii" path="res://Assets/Hud/circlebar/circle bar progress red.png" id="9_d1xoe"]
 
 [node name="Control" type="Control"]
@@ -31,7 +32,21 @@ nine_patch_stretch = true
 texture_under = ExtResource("2_b2x4i")
 texture_progress = ExtResource("3_ytsqr")
 
-[node name="EnemyHealth" type="TextureProgressBar" parent="."]
+[node name="HipnoHealth" type="TextureProgressBar" parent="."]
+visible = false
+layout_mode = 0
+offset_left = 800.0
+offset_top = 48.0
+offset_right = 948.0
+offset_bottom = 77.0
+scale = Vector2(1.5, 1.5)
+value = 100.0
+fill_mode = 1
+nine_patch_stretch = true
+texture_under = ExtResource("4_41qdd")
+texture_progress = ExtResource("5_kkgec")
+
+[node name="LionHealth" type="TextureProgressBar" parent="."]
 layout_mode = 0
 offset_left = 800.0
 offset_top = 48.0
@@ -49,10 +64,16 @@ position = Vector2(96, 576)
 scale = Vector2(4.1, 4.1)
 texture = ExtResource("6_sci8m")
 
-[node name="Sprite2D2" type="Sprite2D" parent="."]
+[node name="Hipno" type="Sprite2D" parent="."]
+visible = false
 position = Vector2(1064, 72)
 scale = Vector2(4.1, 4.1)
 texture = ExtResource("7_gbwim")
+
+[node name="Lion" type="Sprite2D" parent="."]
+position = Vector2(1064, 72)
+scale = Vector2(4.1, 4.1)
+texture = ExtResource("8_p1ub6")
 
 [node name="shootCharge" type="TextureProgressBar" parent="."]
 layout_mode = 0
