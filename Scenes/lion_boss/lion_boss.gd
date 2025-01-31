@@ -7,6 +7,8 @@ extends Boss
 @export var push_strength = 500
 # time para el salto
 var jumpTime = 0
+var timerWalk = 0.0
+var timerJump = 0.0
 
 func _process(delta):
 	pass
