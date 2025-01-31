@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://dbge7ppi0vsv4"]
+[gd_scene load_steps=9 format=3 uid="uid://dbge7ppi0vsv4"]
 
 [ext_resource type="Script" path="res://Scenes/ui/menu_juego_ui.gd" id="1_72fcx"]
 [ext_resource type="Texture2D" uid="uid://ca1i03tmnfov1" path="res://Assets/Hud/player/lifeBar.png" id="2_b2x4i"]
@@ -7,9 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://b2t6618pm3wt1" path="res://Assets/Hud/enemy/fill.png" id="5_kkgec"]
 [ext_resource type="Texture2D" uid="uid://ql53pq22hwb8" path="res://Assets/Hud/caras/ninio.png" id="6_sci8m"]
 [ext_resource type="Texture2D" uid="uid://bdsefw3680dhe" path="res://Assets/Hud/caras/Untilted - 3.png" id="7_gbwim"]
-[ext_resource type="Texture2D" uid="uid://cfce1igxqm0sm" path="res://Assets/Hud/circlebar/circle bar under.png" id="8_aspqg"]
 [ext_resource type="Texture2D" uid="uid://bghqb2y2cwnj7" path="res://Assets/Hud/caras/Lion.png" id="8_p1ub6"]
-[ext_resource type="Texture2D" uid="uid://c3uvviad5vyii" path="res://Assets/Hud/circlebar/circle bar progress red.png" id="9_d1xoe"]
 
 [node name="Control" type="Control"]
 layout_mode = 3
@@ -77,14 +75,3 @@ texture = ExtResource("7_gbwim")
 position = Vector2(1064, 72)
 scale = Vector2(4.1, 4.1)
 texture = ExtResource("8_p1ub6")
-
-[node name="shootCharge" type="TextureProgressBar" parent="."]
-layout_mode = 0
-offset_left = 384.0
-offset_top = 560.0
-offset_right = 424.0
-offset_bottom = 600.0
-fill_mode = 4
-nine_patch_stretch = true
-texture_under = ExtResource("8_aspqg")
-texture_progress = ExtResource("9_d1xoe")
