@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://ddgd60i7pfvtq"]
+[gd_scene load_steps=10 format=3 uid="uid://ddgd60i7pfvtq"]
 
 [ext_resource type="Script" path="res://Scenes/main_scene/main_scene.gd" id="1_em213"]
 [ext_resource type="PackedScene" uid="uid://f5mvlpww81f4" path="res://Scenes/main_char/main_char.tscn" id="1_yoicf"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://dijr4i4ga56rg" path="res://Scenes/lion_boss/lion_boss.tscn" id="4_qxxha"]
 [ext_resource type="PackedScene" uid="uid://baehtdpqmyrb" path="res://Scenes/joker_boss/joker_boss.tscn" id="6_uowd6"]
 [ext_resource type="Script" path="res://Scripts/tomato_spawner.gd" id="6_xcnes"]
+[ext_resource type="PackedScene" uid="uid://dbge7ppi0vsv4" path="res://Scenes/ui/MenuJuegoUI.tscn" id="7_0us6v"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_fppy2"]
 distance = -650.0
@@ -71,5 +72,7 @@ debug_color = Color(1, 0, 0, 0.419608)
 
 [node name="tomato_spawner_timer" type="Timer" parent="tomato_spawner"]
 autostart = true
+
+[node name="Control" parent="." instance=ExtResource("7_0us6v")]
 
 [connection signal="timeout" from="tomato_spawner/tomato_spawner_timer" to="tomato_spawner" method="_on_tomato_spawner_timer_timeout"]

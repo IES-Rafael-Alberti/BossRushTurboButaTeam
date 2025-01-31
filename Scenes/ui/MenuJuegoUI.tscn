@@ -1,0 +1,66 @@
+[gd_scene load_steps=10 format=3 uid="uid://dbge7ppi0vsv4"]
+
+[ext_resource type="Script" path="res://Scenes/ui/menu_juego_ui.gd" id="1_72fcx"]
+[ext_resource type="Texture2D" uid="uid://ca1i03tmnfov1" path="res://Assets/Hud/player/lifeBar.png" id="2_b2x4i"]
+[ext_resource type="Texture2D" uid="uid://6aaod0tovj72" path="res://Assets/Hud/player/fill.png" id="3_ytsqr"]
+[ext_resource type="Texture2D" uid="uid://bo5ytnkfsvjdy" path="res://Assets/Hud/enemy/lifebar.png" id="4_41qdd"]
+[ext_resource type="Texture2D" uid="uid://b2t6618pm3wt1" path="res://Assets/Hud/enemy/fill.png" id="5_kkgec"]
+[ext_resource type="Texture2D" uid="uid://ql53pq22hwb8" path="res://Assets/Hud/caras/ninio.png" id="6_sci8m"]
+[ext_resource type="Texture2D" uid="uid://bdsefw3680dhe" path="res://Assets/Hud/caras/Untilted - 3.png" id="7_gbwim"]
+[ext_resource type="Texture2D" uid="uid://cfce1igxqm0sm" path="res://Assets/Hud/circlebar/circle bar under.png" id="8_aspqg"]
+[ext_resource type="Texture2D" uid="uid://c3uvviad5vyii" path="res://Assets/Hud/circlebar/circle bar progress red.png" id="9_d1xoe"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_72fcx")
+
+[node name="PlayerHealth" type="TextureProgressBar" parent="."]
+layout_mode = 0
+offset_left = 152.0
+offset_top = 560.0
+offset_right = 300.0
+offset_bottom = 589.0
+scale = Vector2(1.5, 1.5)
+value = 100.0
+nine_patch_stretch = true
+texture_under = ExtResource("2_b2x4i")
+texture_progress = ExtResource("3_ytsqr")
+
+[node name="EnemyHealth" type="TextureProgressBar" parent="."]
+layout_mode = 0
+offset_left = 800.0
+offset_top = 48.0
+offset_right = 948.0
+offset_bottom = 77.0
+scale = Vector2(1.5, 1.5)
+value = 100.0
+fill_mode = 1
+nine_patch_stretch = true
+texture_under = ExtResource("4_41qdd")
+texture_progress = ExtResource("5_kkgec")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(96, 576)
+scale = Vector2(4.1, 4.1)
+texture = ExtResource("6_sci8m")
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+position = Vector2(1064, 72)
+scale = Vector2(4.1, 4.1)
+texture = ExtResource("7_gbwim")
+
+[node name="shootCharge" type="TextureProgressBar" parent="."]
+layout_mode = 0
+offset_left = 384.0
+offset_top = 560.0
+offset_right = 424.0
+offset_bottom = 600.0
+fill_mode = 4
+nine_patch_stretch = true
+texture_under = ExtResource("8_aspqg")
+texture_progress = ExtResource("9_d1xoe")
