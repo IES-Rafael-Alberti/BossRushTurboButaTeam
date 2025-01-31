@@ -1,0 +1,25 @@
+[gd_scene load_steps=4 format=3 uid="uid://cxcntvr137lac"]
+
+[ext_resource type="PackedScene" uid="uid://f5mvlpww81f4" path="res://Scenes/main_char/main_char.tscn" id="1_d3hhv"]
+[ext_resource type="PackedScene" uid="uid://cuo4ahrqsu8px" path="res://Scenes/base_enemy/enemy.tscn" id="2_tyk7a"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_08vm1"]
+distance = -648.0
+
+[node name="SampleScene" type="Node2D"]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+collision_mask = 16
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+shape = SubResource("WorldBoundaryShape2D_08vm1")
+
+[node name="MainChar" parent="." instance=ExtResource("1_d3hhv")]
+position = Vector2(92, 577)
+attack_damage = 1000
+min_shoot_range = Vector2(50, -100)
+max_shoot_range = Vector2(1000, -2000)
+force_by_frame = Vector2(5, -10)
+
+[node name="Enemy" parent="." instance=ExtResource("2_tyk7a")]
+position = Vector2(759, 591)

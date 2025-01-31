@@ -1,5 +1,6 @@
 extends State
 
+#TODO enfocar el salto como el attack, con un cooldown
 @onready var P0_lion_position
 @onready var P2_player_position
 @onready var P1_middle 
@@ -9,6 +10,7 @@ var is_jumping = false
 func enter(_msg := {}) -> void:
 	owner.sprite.play("jump")
 	jump()
+	owner.timerJump = 0.0
 
 func jump():
 	P0_lion_position = owner.position
@@ -22,17 +24,15 @@ func jump():
 	is_jumping = true
 	
 func transtions():
-	if owner.is_on_floor():
+	if owner.is_on_floor() or owner.timerJump >= jump_duration:
 		is_jumping = false
-		if owner.global_position.distance_to(owner.player.global_position) < owner.walk_distance:
-			state_machine.transition_to("Walk")
-		else:
-			state_machine.transition_to("Idle")
+		state_machine.transition_to("Idle")
 
 func update(_delta:float) -> void:
 	if is_jumping:
 		owner.position = bezier(owner.jumpTime)
 		owner.jumpTime += _delta
+		owner.timerJump += _delta
 	transtions()
 	
 func bezier(t): #ORO

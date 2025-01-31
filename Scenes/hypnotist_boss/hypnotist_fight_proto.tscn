@@ -1,0 +1,45 @@
+[gd_scene load_steps=6 format=3 uid="uid://cys2lvkyyc1nc"]
+
+[ext_resource type="PackedScene" uid="uid://kfxre3sdahyw" path="res://Scenes/hypnotist_boss/hypnotist_boss.tscn" id="1_phkkg"]
+[ext_resource type="PackedScene" uid="uid://f5mvlpww81f4" path="res://Scenes/main_char/main_char.tscn" id="2_2ov1n"]
+[ext_resource type="Texture2D" uid="uid://dvjk8ns74j4q7" path="res://Assets/fondo.png" id="3_7qpvq"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_mrxf1"]
+distance = -17.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wjatl"]
+size = Vector2(247, 12)
+
+[node name="hypnotistFightProto" type="Node2D"]
+
+[node name="hypnotist" parent="." instance=ExtResource("1_phkkg")]
+position = Vector2(1023, 134)
+scale = Vector2(8, 8)
+
+[node name="MainChar" parent="." instance=ExtResource("2_2ov1n")]
+position = Vector2(105, 522)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+position = Vector2(108, 542)
+scale = Vector2(4, 4)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(-0.25, -0.75)
+shape = SubResource("WorldBoundaryShape2D_mrxf1")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+z_index = -1
+position = Vector2(578, 326)
+scale = Vector2(2.4, 2.4)
+texture = ExtResource("3_7qpvq")
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="."]
+position = Vector2(1023, 134)
+scale = Vector2(8, 8)
+collision_mask = 16
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2"]
+position = Vector2(-0.8125, 11.375)
+rotation = 3.14159
+scale = Vector2(0.125, 0.125)
+shape = SubResource("RectangleShape2D_wjatl")

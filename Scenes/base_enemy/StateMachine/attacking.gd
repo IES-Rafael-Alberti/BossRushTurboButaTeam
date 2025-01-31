@@ -4,7 +4,8 @@ extends State
 var times_attacked = 0
 
 func _ready():
-	attack_timer.timeout.connect(generate_projectile)
+	pass
+	#attack_timer.timeout.connect(generate_projectile)
 
 
 func enter(_msg := {}):
