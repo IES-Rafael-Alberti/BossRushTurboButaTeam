@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://di3xfy6tm7kwf"
+path="res://.godot/imported/turbobuta Geometrydash.mp3-d0d62eae338b3d4a1cc9c10ef55f1346.mp3str"
+
+[deps]
+
+source_file="res://Assets/audio/turbobuta Geometrydash.mp3"
+dest_files=["res://.godot/imported/turbobuta Geometrydash.mp3-d0d62eae338b3d4a1cc9c10ef55f1346.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

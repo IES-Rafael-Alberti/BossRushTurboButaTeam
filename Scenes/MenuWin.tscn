@@ -1,0 +1,67 @@
+[gd_scene load_steps=4 format=3 uid="uid://mior7tglyqgc"]
+
+[ext_resource type="Texture2D" uid="uid://dvjk8ns74j4q7" path="res://Assets/fondo.png" id="1_k744e"]
+[ext_resource type="Script" path="res://Scenes/MenuWin.gd" id="1_p6esv"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_6sanx"]
+font_size = 110
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_p6esv")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(575.111, 326.75)
+scale = Vector2(2.41667, 2.41667)
+texture = ExtResource("1_k744e")
+
+[node name="QuitButton" type="Button" parent="."]
+process_mode = 3
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -211.0
+offset_top = -200.0
+offset_right = 211.0
+offset_bottom = -124.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_font_sizes/font_size = 58
+text = "QUIT"
+
+[node name="RetryButton" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -208.0
+offset_top = -15.0
+offset_right = 208.0
+offset_bottom = 65.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 58
+text = "RETRY"
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 336.0
+offset_top = 156.0
+offset_right = 838.0
+offset_bottom = 260.0
+theme_override_font_sizes/font_size = 65
+text = "YOU WIN !"
+label_settings = SubResource("LabelSettings_6sanx")
+
+[connection signal="pressed" from="QuitButton" to="." method="_on_menu_button_pressed"]
+[connection signal="pressed" from="RetryButton" to="." method="_on_retry_button_pressed"]

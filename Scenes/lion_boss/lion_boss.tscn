@@ -205,6 +205,7 @@ animations = [{
 [node name="LionBoss" type="CharacterBody2D"]
 collision_layer = 2
 script = ExtResource("1_ff2op")
+speed = 200.0
 
 [node name="LionCol" type="CollisionShape2D" parent="."]
 position = Vector2(-7.5, 3.02772e-05)

@@ -1,0 +1,66 @@
+[gd_scene load_steps=8 format=3 uid="uid://wg04nxlqgp37"]
+
+[ext_resource type="Texture2D" uid="uid://ca1i03tmnfov1" path="res://lifebar/player/lifeBar.png" id="1_g57dx"]
+[ext_resource type="Script" path="res://control.gd" id="1_g8812"]
+[ext_resource type="Texture2D" uid="uid://6aaod0tovj72" path="res://lifebar/player/fill.png" id="3_h0xnd"]
+[ext_resource type="Texture2D" uid="uid://ql53pq22hwb8" path="res://caras/ninio.png" id="3_x0jk6"]
+[ext_resource type="Texture2D" uid="uid://bo5ytnkfsvjdy" path="res://lifebar/enemy/lifebar.png" id="4_wlycg"]
+[ext_resource type="Texture2D" uid="uid://b2t6618pm3wt1" path="res://lifebar/enemy/fill.png" id="5_o32ul"]
+[ext_resource type="Texture2D" uid="uid://ib3hrdblej07" path="res://caras/Untitled - 3.png" id="6_kqqwp"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_g8812")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 2
+offset_left = 1059.0
+offset_top = 15.0
+offset_right = 1137.0
+offset_bottom = 93.0
+texture = ExtResource("6_kqqwp")
+
+[node name="TextureRect2" type="TextureRect" parent="."]
+layout_mode = 2
+offset_left = 21.0
+offset_top = 549.0
+offset_right = 99.0
+offset_bottom = 627.0
+texture = ExtResource("3_x0jk6")
+
+[node name="TextureProgressBar" type="TextureProgressBar" parent="."]
+custom_minimum_size = Vector2(400, 40)
+layout_mode = 2
+offset_left = 662.0
+offset_top = 37.0
+offset_right = 1062.0
+offset_bottom = 77.0
+value = 100.0
+fill_mode = 1
+nine_patch_stretch = true
+texture_under = ExtResource("4_wlycg")
+texture_progress = ExtResource("5_o32ul")
+
+[node name="TextureProgressBar2" type="TextureProgressBar" parent="."]
+custom_minimum_size = Vector2(400, 40)
+layout_mode = 2
+offset_left = 98.0
+offset_top = 573.0
+offset_right = 498.0
+offset_bottom = 613.0
+size_flags_horizontal = 4
+value = 100.0
+nine_patch_stretch = true
+texture_under = ExtResource("1_g57dx")
+texture_progress = ExtResource("3_h0xnd")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.1
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

@@ -1,13 +1,14 @@
-[gd_scene load_steps=10 format=3 uid="uid://bbtinlckxl0p2"]
+[gd_scene load_steps=11 format=3 uid="uid://bbtinlckxl0p2"]
 
 [ext_resource type="Script" path="res://Scenes/main_menu.gd" id="1_6q8ci"]
+[ext_resource type="Theme" uid="uid://dhpsj3wj21aik" path="res://Resources/MainMenuScene.tres" id="1_ef2dj"]
 [ext_resource type="Texture2D" uid="uid://b8lfi73p0brst" path="res://Assets/fondoMenu.png" id="2_poy1v"]
 [ext_resource type="FontFile" uid="uid://cdgviiim5ysqe" path="res://Resources/alagard.ttf" id="2_ust0v"]
 [ext_resource type="AudioStream" uid="uid://dnj6vg5b188rl" path="res://Assets/539512__tpainterforfun__myschoolproj.mp3" id="4_6s1if"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_phivw"]
 font = ExtResource("2_ust0v")
-font_size = 68
+font_size = 54
 font_color = Color(0.12549, 0.113725, 0.458824, 1)
 outline_size = 13
 shadow_size = 7
@@ -79,6 +80,7 @@ offset_right = 4.0
 offset_bottom = 7.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = ExtResource("1_ef2dj")
 script = ExtResource("1_6q8ci")
 metadata/_edit_lock_ = true
 
@@ -89,54 +91,15 @@ offset_right = 1148.0
 offset_bottom = 641.0
 texture = ExtResource("2_poy1v")
 
-[node name="PlayButton" type="Button" parent="."]
-layout_mode = 0
-offset_left = 410.0
-offset_top = 283.0
-offset_right = 663.0
-offset_bottom = 376.0
-theme_override_colors/font_pressed_color = Color(0.12549, 0.113725, 0.458824, 1)
-theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_constants/outline_size = 1
-theme_override_fonts/font = ExtResource("2_ust0v")
-theme_override_font_sizes/font_size = 35
-text = "PLAY
-"
-
-[node name="MenuButton" type="Button" parent="."]
-layout_mode = 0
-offset_left = 902.0
-offset_top = 351.0
-offset_right = 1096.0
-offset_bottom = 425.0
-theme_override_colors/font_pressed_color = Color(0.12549, 0.113725, 0.458824, 1)
-theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_constants/outline_size = 1
-theme_override_fonts/font = ExtResource("2_ust0v")
-theme_override_font_sizes/font_size = 35
-text = "MENU"
-
 [node name="Label" type="Label" parent="."]
 layout_mode = 0
-offset_left = 76.0
-offset_top = 438.0
-offset_right = 408.0
-offset_bottom = 569.0
-text = "Circus 
+offset_left = 64.0
+offset_top = 411.0
+offset_right = 396.0
+offset_bottom = 542.0
+text = "   Circus 
 Nightmare"
 label_settings = SubResource("LabelSettings_phivw")
-
-[node name="CreditButton" type="Button" parent="."]
-layout_mode = 0
-offset_left = 925.0
-offset_top = 35.0
-offset_right = 1104.0
-offset_bottom = 90.0
-theme_override_colors/font_pressed_color = Color(0.12549, 0.113725, 0.458824, 1)
-theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_font_sizes/font_size = 27
-text = "CREDITS"
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
@@ -151,6 +114,27 @@ autoplay = true
 mix_target = 1
 max_polyphony = 3
 
+[node name="PlayButton" type="Button" parent="."]
+layout_mode = 0
+offset_left = 417.0
+offset_top = 227.0
+offset_right = 744.0
+offset_bottom = 328.0
+theme = ExtResource("1_ef2dj")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 57
+text = "PLAY"
+
+[node name="CreditButton" type="Button" parent="."]
+layout_mode = 0
+offset_left = 879.0
+offset_top = 284.0
+offset_right = 1166.0
+offset_bottom = 383.0
+theme = ExtResource("1_ef2dj")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 35
+text = "Credits"
+
 [connection signal="pressed" from="PlayButton" to="." method="_on_play_button_pressed"]
-[connection signal="pressed" from="MenuButton" to="." method="_on_menu_button_pressed"]
 [connection signal="pressed" from="CreditButton" to="." method="_on_credit_button_pressed"]

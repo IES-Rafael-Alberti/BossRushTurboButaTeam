@@ -6,6 +6,8 @@ extends Node2D
 @onready var last_action = $last_action
 @export var roll_interval:float = 30
 @export var spin_duration:float = 3
+@onready var spin_audio: AudioStreamPlayer = $"../SpinAudio"
+
 var stop_at = 0
 var stopping_wheel = false
 var result = 0
@@ -18,6 +20,7 @@ func _ready():
 	roll_interval_timer.timeout.connect(spin)
 
 func spin():
+	spin_audio.play()
 	result = randi_range(0,6)
 	print("new_result")
 	animation_player.play("rotation")

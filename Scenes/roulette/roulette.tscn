@@ -50,6 +50,8 @@ script = ExtResource("1_tr5bb")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture_filter = 3
+position = Vector2(-3.57628e-07, -3.57628e-07)
+scale = Vector2(0.851562, 0.851562)
 texture = ExtResource("2_tfj0h")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
@@ -66,8 +68,8 @@ texture = ExtResource("3_edao7")
 autostart = true
 
 [node name="last_action" type="Label" parent="."]
-offset_left = -495.0
-offset_top = -29.0
-offset_right = -367.0
-offset_bottom = 31.0
+offset_left = -340.0
+offset_top = -12.5
+offset_right = -212.0
+offset_bottom = 47.5
 label_settings = SubResource("LabelSettings_wggst")
