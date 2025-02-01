@@ -1,4 +1,4 @@
-[gd_scene load_steps=38 format=3 uid="uid://f5mvlpww81f4"]
+[gd_scene load_steps=40 format=3 uid="uid://f5mvlpww81f4"]
 
 [ext_resource type="Script" path="res://Scenes/main_char/mc_controller.gd" id="1_6wk8p"]
 [ext_resource type="Texture2D" uid="uid://gux2g1edmc8v" path="res://Assets/player/animacion_andar_player.png" id="2_jdujk"]
@@ -16,6 +16,8 @@
 [ext_resource type="Script" path="res://Scenes/main_char/StateMachine/shoot.gd" id="8_oifls"]
 [ext_resource type="Texture2D" uid="uid://cfce1igxqm0sm" path="res://Assets/Hud/circlebar/circle bar under.png" id="15_44yp0"]
 [ext_resource type="Texture2D" uid="uid://c3uvviad5vyii" path="res://Assets/Hud/circlebar/circle bar progress red.png" id="16_rmnr2"]
+[ext_resource type="AudioStream" uid="uid://drymixbjxds42" path="res://Assets/audio/518130__se2001__8-bit-jump-2.wav" id="17_smq4p"]
+[ext_resource type="AudioStream" uid="uid://dl7x72hyikjht" path="res://Assets/audio/443726__cabusta9__17-movimiento-ataque-attack-movement.wav" id="18_ielxd"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dr80s"]
 size = Vector2(18.25, 24)
@@ -189,6 +191,7 @@ collision_mask = 3
 script = ExtResource("1_6wk8p")
 SPEED = 400.0
 JUMP_VELOCITY = -1000.0
+health = 650
 attack_damage = 50
 min_shoot_range = Vector2(20, -100)
 max_shoot_range = Vector2(700, -2000)
@@ -246,3 +249,9 @@ fill_mode = 4
 nine_patch_stretch = true
 texture_under = ExtResource("15_44yp0")
 texture_progress = ExtResource("16_rmnr2")
+
+[node name="Jump" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("17_smq4p")
+
+[node name="AttackSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("18_ielxd")
