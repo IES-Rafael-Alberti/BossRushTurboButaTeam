@@ -68,7 +68,7 @@ collision_mask = 33
 
 [node name="JokerBoss" parent="Bosses" instance=ExtResource("6_uowd6")]
 visible = false
-position = Vector2(872, 569)
+position = Vector2(1000, 473.115)
 jump_distance = 500.0
 
 [node name="tomato_spawner" type="Area2D" parent="."]

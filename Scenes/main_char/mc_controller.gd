@@ -63,10 +63,12 @@ func die():
 	process_mode = PROCESS_MODE_DISABLED
 	game_manager.player_died.emit()
 func activate_bonus_damage():
+	print('bonus dmg')
 	attack_damage+= roulette_dmg_bonus
 
 func reset_damage():
-	attack_damage-=roulette_dmg_bonus
+	print('reset dmg')
+	attack_damage = 50
 
 func swap_bullets(arrows:bool):
 	shooting_arrows = arrows
