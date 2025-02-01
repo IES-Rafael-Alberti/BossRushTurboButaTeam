@@ -68,8 +68,8 @@ texture = ExtResource("3_edao7")
 autostart = true
 
 [node name="last_action" type="Label" parent="."]
-offset_left = -284.5
-offset_top = -14.0
-offset_right = -156.5
-offset_bottom = 46.0
+offset_left = -340.0
+offset_top = -12.5
+offset_right = -212.0
+offset_bottom = 47.5
 label_settings = SubResource("LabelSettings_wggst")

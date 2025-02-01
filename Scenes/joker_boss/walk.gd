@@ -8,7 +8,8 @@ func handle_input(_event:InputEvent) -> void:
 func update(_delta:float) -> void:
 	if not owner.is_on_floor():
 		state_machine.transition_to("Air")
-	owner.global_position.x -= (owner.direction * owner.speed * _delta).x
+	if owner.direction != null:
+		owner.global_position.x -= (owner.direction * owner.speed * _delta).x
 	if owner.global_position.distance_to(owner.player.global_position) > owner.safe_distance:
 		state_machine.transition_to("Attack")
 	elif owner.is_on_wall():
