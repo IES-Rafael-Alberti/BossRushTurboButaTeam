@@ -13,7 +13,7 @@
 [ext_resource type="Texture2D" uid="uid://dj7d3dkn1tkq1" path="res://Assets/joker/salto.png" id="10_kamf3"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lkv3y"]
-size = Vector2(19, 3)
+size = Vector2(19, 1)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_67xsd"]
 size = Vector2(0.833332, 20)
@@ -161,7 +161,7 @@ speed = 200.0
 
 [node name="JokerCol" type="CollisionShape2D" parent="."]
 unique_name_in_owner = true
-position = Vector2(-7.5, 3.02772e-05)
+position = Vector2(-9.66667, 3.81205e-05)
 rotation = -1.5708
 shape = SubResource("RectangleShape2D_lkv3y")
 one_way_collision = true

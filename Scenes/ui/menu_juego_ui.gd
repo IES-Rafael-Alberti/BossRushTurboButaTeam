@@ -15,7 +15,7 @@ func _ready():
 	game_manager.joker_dmg.connect(HipnoGetDmg)
 	game_manager.lion_dmg.connect(LionGetDmg)
 	game_manager.swap_boss.connect(lionHudVisible)
-	
+	game_manager.boss_dead.connect(lionHudVisible)
 func playerGetDmg(getDmg:int):
 	player_health.value -= getDmg
 	
@@ -27,6 +27,7 @@ func LionGetDmg(getDmg:int):
 	lion_health.value -= getDmg
 
 func lionHudVisible(is_lion:bool):
+	print("entering hud swap")
 	if !is_lion:
 		spriteHipno.visible = true
 		spriteLion.visible = false

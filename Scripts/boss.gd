@@ -40,5 +40,8 @@ func process_attack(dmg:float):
 	health-=dmg
 	print("dmg received, hp: ",health)
 	if health<=0:
-		game_manager.boss_dead.emit()
+		if name=="LionBoss":
+			game_manager.boss_dead.emit(false)
+		else:
+			game_manager.boss_dead.emit(true)
 		queue_free()

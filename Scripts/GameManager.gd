@@ -20,7 +20,7 @@ signal mc_dmg(dmg:int)
 #endregion
 signal player_died
 
-signal boss_dead
+signal boss_dead(is_lion:bool)
 var one_boss_dead = false
 var is_boss_lion:bool
 @export var tomato_falling_speed = 3
@@ -36,7 +36,7 @@ func reset_properties():
 
 func _ready():
 	boss_dead.connect(win_condition)
-func win_condition():
+func win_condition(def):
 	print("=======================trying win", one_boss_dead)
 	if one_boss_dead==false:
 		one_boss_dead=true

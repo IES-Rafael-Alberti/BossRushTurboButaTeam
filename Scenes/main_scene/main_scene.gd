@@ -27,7 +27,7 @@ func swap_boss(is_lion:bool)-> void : #TODO cuando muera uno que se ponga el otr
 		joker_boss.process_mode = PROCESS_MODE_INHERIT
 		lion_boss.process_mode = PROCESS_MODE_DISABLED
 
-func permanent_boss():
+func permanent_boss(def):
 	await Engine.get_main_loop().process_frame
 	var node = find_child("LionBoss")
 	print("-------------------------------------",node)
