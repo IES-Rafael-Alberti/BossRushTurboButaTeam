@@ -7,7 +7,7 @@ func _ready() -> void:
 	game_manager.tomatoes_on.connect(tomatoes_onf)
 	game_manager.tomatoes_off.connect(tomatoes_offf)
 func spawn_tomato():
-	print("spawned tomato")
+	#print("spawned tomato")
 	var tomato = preload("res://Scenes/tomato.tscn").instantiate()
 	add_child(tomato)
 	tomato.global_position.x = randi_range(0,1150)

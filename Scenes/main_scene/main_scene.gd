@@ -13,9 +13,9 @@ func _ready() -> void:
 func swap_boss(is_lion:bool)-> void : #TODO cuando muera uno que se ponga el otro
 	if game_manager.one_boss_dead:
 		return
-	print("called_swap_boss, is_lion:",is_lion,"is_boss_lion",game_manager.is_boss_lion)
+	#print("called_swap_boss, is_lion:",is_lion,"is_boss_lion",game_manager.is_boss_lion)
 	if is_lion == game_manager.is_boss_lion:
-		print("same boss called")
+		#print("same boss called")
 		return
 	game_manager.is_boss_lion = !game_manager.is_boss_lion
 	lion_boss.visible = game_manager.is_boss_lion
@@ -30,7 +30,7 @@ func swap_boss(is_lion:bool)-> void : #TODO cuando muera uno que se ponga el otr
 func permanent_boss(def):
 	await Engine.get_main_loop().process_frame
 	var node = find_child("LionBoss")
-	print("-------------------------------------",node)
+	#print("-------------------------------------",node)
 	if node==null:
 		var jb = find_child("JokerBoss")
 		if jb!=null:

@@ -36,7 +36,7 @@ func transition_to(target_state_name: String, msg: Dictionary = {}) -> void:
 	#print(owner.name, "SM : Transición ",state.name,">",target_state_name) #FIXME print
 	#Si el nodo alque queremos transicionar no existe:
 	if not has_node(target_state_name):
-		print("no such node as " + target_state_name)
+		#print("no such node as " + target_state_name)
 		return
 	#Aquí cambiamos state al nuevo estado
 	state.exit()

@@ -15,4 +15,5 @@ func attack():
 			if enemy.get_parent().has_method("process_attack"):
 				enemy.get_parent().process_attack(owner.attack_damage)
 	else:
-		print("failed attack") #FIXME print
+		pass
+		#print("failed attack") #FIXME print

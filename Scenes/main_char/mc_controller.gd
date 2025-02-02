@@ -42,7 +42,7 @@ func process_attack(dmg) -> void:
 	while awaited_frames<frames_for_parry:
 		if Input.is_action_just_pressed("parry"):
 			state_machine.transition_to("Attack")
-			print("attack_parried") #FIXME print
+			#print("attack_parried") #FIXME print
 			awaited_frames=0
 			return
 		await Engine.get_main_loop().process_frame
@@ -63,11 +63,11 @@ func die():
 	process_mode = PROCESS_MODE_DISABLED
 	game_manager.player_died.emit()
 func activate_bonus_damage():
-	print('bonus dmg')
+	#print('bonus dmg')
 	attack_damage+= roulette_dmg_bonus
 
 func reset_damage():
-	print('reset dmg')
+	#print('reset dmg')
 	attack_damage = 50
 
 func swap_bullets(arrows:bool):

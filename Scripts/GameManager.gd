@@ -37,7 +37,7 @@ func reset_properties():
 func _ready():
 	boss_dead.connect(win_condition)
 func win_condition(def):
-	print("=======================trying win", one_boss_dead)
+	#print("=======================trying win", one_boss_dead)
 	if one_boss_dead==false:
 		one_boss_dead=true
 	else:

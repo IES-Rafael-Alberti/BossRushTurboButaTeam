@@ -18,6 +18,6 @@ func _physics_process(delta):
 
 func process_attack(dmg:float):
 	health-=dmg
-	print(self," got dmg, hp: ", health)
+	#print(self," got dmg, hp: ", health)
 	if health<=0:
 		queue_free()

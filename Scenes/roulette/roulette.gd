@@ -22,7 +22,7 @@ func _ready():
 func spin():
 	spin_audio.play()
 	result = randi_range(0,6)
-	print("new_result")
+	#print("new_result")
 	animation_player.play("rotation")
 	stop_at = (result*45)+randi_range(0,45)
 	await get_tree().create_timer(spin_duration).timeout
@@ -33,7 +33,7 @@ func _process(delta):
 	if stopping_wheel:
 		wheel_sprite.rotation = lerpf(wheel_sprite.rotation,stop_at, 360/60*delta) #TODO transición seamless a cuando está parando
 		if roundf(wheel_sprite.rotation)==stop_at:
-			print("stopped stopping_wheel")
+			#print("stopped stopping_wheel")
 			stopping_wheel = false
 			process_result()
 
@@ -44,33 +44,33 @@ func process_result():
 			if game_manager.one_boss_dead:
 				last_action.set_text("Nothing")
 				return
-			print("0:showing_lion")
+			#print("0:showing_lion")
 			last_action.set_text("Lion")
 			game_manager.swap_boss.emit(true)
 		1:
 			if game_manager.one_boss_dead:
 				last_action.set_text("Nothing")
 				return
-			print("1:showing_joker")
+			#print("1:showing_joker")
 			last_action.set_text("Joker")
 			game_manager.swap_boss.emit(false)
 		2:
-			print("2:Fast mode")
+			#print("2:Fast mode")
 			last_action.set_text("Fast")
 			game_manager.change_game_speed(1.5)
 		3:
-			print("3:Slow mode")
+			#print("3:Slow mode")
 			last_action.set_text("Slow")
 			game_manager.change_game_speed(0.5)
 		4:
-			print("4:Swap projectile")
+			#print("4:Swap projectile")
 			last_action.set_text("Projectile Swap")
 			game_manager.swap_shooting.emit(false)#TODO
 		5:
-			print("5:Bonus damage")
+			#print("5:Bonus damage")
 			last_action.set_text("Bonus Damage")
 			game_manager.bonus_dmg_on.emit()
 		6:
-			print("6:Tomates")
+			#print("6:Tomates")
 			last_action.set_text("Tomatoes")
 			game_manager.tomatoes_on.emit()

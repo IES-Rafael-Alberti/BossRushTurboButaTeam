@@ -38,7 +38,7 @@ func process_attack(dmg:float):
 	else:
 		game_manager.joker_dmg.emit(dmg)
 	health-=dmg
-	print("dmg received, hp: ",health)
+	#print("dmg received, hp: ",health)
 	if health<=0:
 		if name=="LionBoss":
 			game_manager.boss_dead.emit(false)

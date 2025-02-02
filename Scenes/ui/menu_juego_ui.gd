@@ -2,7 +2,6 @@ extends Control
 
 var player:Node
 @onready var player_health = $PlayerHealth
-@onready var shoot_charge = $shootCharge
 @onready var hipno_health = $HipnoHealth
 @onready var lion_health = $LionHealth
 @onready var spriteLion = $Lion
@@ -20,14 +19,14 @@ func playerGetDmg(getDmg:int):
 	player_health.value -= getDmg
 	
 func HipnoGetDmg(getDmg:int):
-	print("entra")
+	#print("entra")
 	hipno_health.value -= getDmg
 
 func LionGetDmg(getDmg:int):
 	lion_health.value -= getDmg
 
 func lionHudVisible(is_lion:bool):
-	print("entering hud swap")
+	#print("entering hud swap")
 	if !is_lion:
 		spriteHipno.visible = true
 		spriteLion.visible = false

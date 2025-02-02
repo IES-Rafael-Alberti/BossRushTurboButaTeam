@@ -8,9 +8,9 @@ func enter(_msg := {}) -> void:
 	
 func update(_delta:float) -> void:
 	timer += _delta
-	print(timer)
+	#print(timer)
 	if timer >= 1.0:
-		print("timer")
+		#print("timer")
 		attack_player()
 		prepare_next_tp()
 		state_machine.transition_to("Idle")
@@ -25,7 +25,7 @@ func prepare_next_tp():
 func attack_player():
 	#cogemos todos los cuerpos en el área de ataque
 	var bodies = owner.attack_area.get_overlapping_bodies()
-	print(bodies)
+	#print(bodies)
 	#si hay más de uno (es decir, si hay)
 	if bodies.size()>0:
 		#por cada cuerpo en el array "Bodies":
